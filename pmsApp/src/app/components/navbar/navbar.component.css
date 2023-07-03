@@ -1,0 +1,20 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+ .login-btn{
+  position: absolute;
+  right: 40px;
+  bottom: 5px;
+ }
+
+ .logout-btn{
+  position: absolute;
+  right: 40px;
+  bottom: 5px;
+ }
+
+ .fullName{
+  position: absolute;
+  right: 160px;
+ }

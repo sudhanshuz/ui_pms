@@ -1,0 +1,25 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"></head>
+    <mat-card>
+      <mat-action-list>
+        <div mat-subheader>
+          Menu
+        </div>
+        <button mat-list-item routerLink="/doctor"><mat-icon mat-list-icon>home</mat-icon>Home</button>
+          <button mat-list-item routerLink="/doctor/profile">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            Profile
+          </button>
+    
+          <!--drugs-->
+          <button mat-list-item routerLink="/doctor"><mat-icon mat-list-icon>medication</mat-icon>search drugs</button>
+          
+          <!--buy drugs-->
+          <button mat-list-item routerLink="/doctor"><mat-icon mat-list-icon>shopping_bag</mat-icon>Buy drugs</button>
+          <!--orders-->
+          <button mat-list-item routerLink="/doctor"><mat-icon mat-list-icon>sell</mat-icon>My orders</button>
+    
+    
+        </mat-action-list>
+    </mat-card>

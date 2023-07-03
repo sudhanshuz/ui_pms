@@ -1,0 +1,30 @@
+form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .full-width{
+    width: 100%;
+  }
+  img {
+    width: 300px;
+    height: auto;
+  }
+
+h2{
+    width: 100%;
+}
+body{
+  background-image: url('../../../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,21 @@
+body{
+        background-image: url('../../../assets/welcomePageUpdated.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+
+.container {
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+    height: 100%;
+  }
+  
+  button {
+    margin: 100px;
+  }
+
+  .centered-button {
+    margin: 200 80px; /* Optional: Add margin between the buttons */
+  }

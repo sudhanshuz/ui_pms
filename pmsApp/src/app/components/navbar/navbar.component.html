@@ -1,0 +1,32 @@
+<p >
+    <mat-toolbar color="primary">
+     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span> <kbd>PharmaCare</kbd></span>
+    <span class="example-spacer"></span>
+
+    <button
+*ngIf="!localStorageIsEmpty()"
+mat-button
+class="example-icon favorite-icon ml20 fullName">
+{{login.getUser().fullName}}
+  </button>
+
+    <a 
+    (click)="logout()"
+    *ngIf="!localStorageIsEmpty()"
+    [routerLink]="'/welcome'"
+    mat-icon-button class="example-icon favorite-icon  ml20 mr20" aria-label="Example icon-button with heart icon">
+    <button mat-button class="text-bg-warning logout-btn">Logout</button>
+</a>
+
+
+    <a 
+    *ngIf="localStorageIsEmpty()"
+    [routerLink]="'/login'"
+    mat-icon-button class="example-icon favorite-icon  ml20" aria-label="Example icon-button with heart icon">
+    <button mat-button class="text-bg-warning login-btn">Login</button>
+</a>
+  </mat-toolbar>
+  </p>

@@ -1,0 +1,68 @@
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></head>
+<mat-card>
+  <mat-action-list>
+    <div mat-subheader>
+      Menu
+    </div>
+    <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon>Home</button>
+      <button mat-list-item routerLink="/admin/profile">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        Profile
+      </button>
+
+      <!--drugs-->
+      <button mat-list-item 
+      [matMenuTriggerFor]="drugs"
+      routerLink="/admin">
+      <mat-icon class="material-icons" mat-list-icon>medication</mat-icon>
+      Manage Drugs</button>
+      <mat-menu #drugs="matMenu">
+        <button mat-menu-item (click)="handleOptionClick('View drugs')">View drugs</button>
+        <button mat-menu-item (click)="handleOptionClick('Add Drugs')">Add Drugs</button>
+        <button mat-menu-item (click)="handleOptionClick('Edit Drugs')">Edit Drugs</button>
+        <button mat-menu-item (click)="handleOptionClick('Delete Drugs')">Delete Drugs</button>
+      </mat-menu>
+
+      <!--Suppliers-->
+      <button mat-list-item 
+      [matMenuTriggerFor]="suppliers"
+      routerLink="/admin">
+      <mat-icon mat-list-icon>forklift</mat-icon>
+      Manage suppliers</button>
+      <mat-menu #suppliers="matMenu">
+        <button mat-menu-item (click)="handleOptionClick('view Suppliers')">view Suppliers</button>
+        <button mat-menu-item (click)="handleOptionClick('add Suppliers')">add Suppliers</button>
+        <button mat-menu-item (click)="handleOptionClick('Edit suppliers')">Edit suppliers</button>
+        <button mat-menu-item (click)="handleOptionClick('delete suppliers')">delete suppliers</button>
+      </mat-menu>
+
+      <!--orders-->
+      <button mat-list-item 
+      [matMenuTriggerFor]="orders"
+      routerLink="/admin">
+      <mat-icon mat-list-icon>shopping_cart</mat-icon>
+      Manage orders</button>
+      <mat-menu #orders="matMenu">
+        <button mat-menu-item (click)="handleOptionClick('add Orders')">add Orders</button>
+        <button mat-menu-item (click)="handleOptionClick('view new Orders')">view new Orders</button>
+        <button mat-menu-item (click)="handleOptionClick('verify Orders')">verify Orders</button>
+        <button mat-menu-item (click)="handleOptionClick('view Picked up Orders')">view Picked up Orders</button>
+      </mat-menu>
+
+      <!--sales-->
+      <button mat-list-item 
+      [matMenuTriggerFor]="sales"
+      routerLink="/admin">
+      <mat-icon mat-list-icon>sell</mat-icon>
+      Sales Reports</button>
+      <mat-menu #sales="matMenu">
+        <button mat-menu-item (click)="handleOptionClick('view Sales Report')">view Sales Report</button>
+        <button mat-menu-item (click)="handleOptionClick('Download sales Report')">Download sales Report</button>
+      </mat-menu>
+
+    </mat-action-list>
+</mat-card>
+  
+  
