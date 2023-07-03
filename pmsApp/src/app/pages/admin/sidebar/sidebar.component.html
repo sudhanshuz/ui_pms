@@ -14,25 +14,23 @@
 
       <!--drugs-->
       <button mat-list-item 
-      [matMenuTriggerFor]="drugs"
-      routerLink="/admin">
+      [matMenuTriggerFor]="drugs">
       <mat-icon class="material-icons" mat-list-icon>medication</mat-icon>
       Manage Drugs</button>
       <mat-menu #drugs="matMenu">
-        <button mat-menu-item (click)="handleOptionClick('View drugs')">View drugs</button>
-        <button mat-menu-item (click)="handleOptionClick('Add Drugs')">Add Drugs</button>
-        <button mat-menu-item (click)="handleOptionClick('Edit Drugs')">Edit Drugs</button>
-        <button mat-menu-item (click)="handleOptionClick('Delete Drugs')">Delete Drugs</button>
+        <button routerLink="/admin/viewDrugs"  mat-menu-item (click)="handleOptionClick('View drugs')">View drugs</button>
+        <button  routerLink="/admin/addDrugs" mat-menu-item (click)="handleOptionClick('Add Drugs')">Add Drugs</button>
+        <button  routerLink="/admin/editDrugs" mat-menu-item (click)="handleOptionClick('Edit Drugs')">Edit Drugs</button>
+        <button  routerLink="/admin/deleteDrugs" mat-menu-item (click)="handleOptionClick('Delete Drugs')">Delete Drugs</button>
       </mat-menu>
 
       <!--Suppliers-->
       <button mat-list-item 
-      [matMenuTriggerFor]="suppliers"
-      routerLink="/admin">
+      [matMenuTriggerFor]="suppliers">
       <mat-icon mat-list-icon>forklift</mat-icon>
       Manage suppliers</button>
       <mat-menu #suppliers="matMenu">
-        <button mat-menu-item (click)="handleOptionClick('view Suppliers')">view Suppliers</button>
+        <button routerLink="/admin/viewSuppliers" mat-menu-item (click)="handleOptionClick('view Suppliers')">view Suppliers</button>
         <button mat-menu-item (click)="handleOptionClick('add Suppliers')">add Suppliers</button>
         <button mat-menu-item (click)="handleOptionClick('Edit suppliers')">Edit suppliers</button>
         <button mat-menu-item (click)="handleOptionClick('delete suppliers')">delete suppliers</button>

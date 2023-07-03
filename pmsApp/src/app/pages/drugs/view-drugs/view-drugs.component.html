@@ -1,0 +1,38 @@
+<!--<mat-card>
+    <mat-list>
+        <div mat-subheader>
+            Drugs
+        </div>
+        <mat-list-item  *ngFor="let d of Drugs">
+            <div>name: {{d['drugName']}}</div>
+            <div>Price per pack: {{d['price']}}</div>
+            <div>expiry : {{d['exp_date']}}</div>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center mt20">
+        <button mat-raised-button color="accent">Add new Drugs</button>
+    </div>
+</mat-card>-->
+
+<!-- shopping-page.component.html -->
+
+<h2 class="heading">
+    Drugs Inventory
+  </h2>  
+  <div>
+       <div class="card" *ngFor="let d of Drugs">
+        <div >
+          <h5 ><b>Name: </b>{{d['drugName']}}</h5>
+          <h5 ><b>Price per pack: </b>{{d['price']}}</h5>
+          <h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5>
+          <h5 ><b>Batch Id: </b>{{d['batchId']}}</h5>
+          <div class="button-container">
+          <button mat-raised-button color="accent" class="custom-button">Edit</button>
+          <button mat-raised-button color="accent" class="custom-button">Delete</button>
+        </div>
+         </div> 
+        </div>
+  </div>
+  
+  

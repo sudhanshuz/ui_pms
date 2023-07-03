@@ -28,6 +28,11 @@ import {MatListModule} from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './pages/home/home/home.component';
 import { DocSidebarComponent } from './pages/doctor/doc-sidebar/doc-sidebar/doc-sidebar.component';
+import { ViewDrugsComponent } from './pages/drugs/view-drugs/view-drugs.component';
+import { AddDrugsComponent } from './pages/drugs/add-drugs/add-drugs.component';
+import { EditDrugsComponent } from './pages/drugs/edit-drugs/edit-drugs.component';
+import { DeleteDrugsComponent } from './pages/drugs/delete-drugs/delete-drugs.component';
+import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-suppliers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +46,12 @@ import { DocSidebarComponent } from './pages/doctor/doc-sidebar/doc-sidebar/doc-
     //HomeComponent,
     DoctorDashboardComponent,
     HomeComponent,
-    DocSidebarComponent
+    DocSidebarComponent,
+    ViewDrugsComponent,
+    AddDrugsComponent,
+    EditDrugsComponent,
+    DeleteDrugsComponent,
+    ViewSuppliersComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,7 @@ import { DocSidebarComponent } from './pages/doctor/doc-sidebar/doc-sidebar/doc-
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [/*{
       provide: HTTP_INTERCEPTORS,

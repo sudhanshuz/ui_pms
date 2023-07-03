@@ -1,0 +1,25 @@
+<h2 class="heading">
+    Suppliers
+  </h2>  
+  <div>
+       <div class="card" *ngFor="let s of Suppliers">
+        <div >
+          <h5 ><b>Id: </b>{{s['supplierId']}}</h5>
+          <h5 ><b>name: </b>{{s['supplierName']}}</h5>
+          <h5 ><b>Email: </b>{{s['supplierEmail']}}</h5>
+          <h5 ><b>Contact: </b>{{s['supplierPhoneNo']}}</h5>
+          <h5 ><b>Stock:</b> 
+            <div *ngFor="let hashMap of s['stock']">
+                <div *ngFor="let item of hashMap | keyvalue">
+                  Drug name: {{ item.key }}, quantity: {{ item.value }}
+                </div>
+              </div>
+              
+          </h5>
+          <div class="button-container">
+          <button mat-raised-button color="accent" class="custom-button">Edit</button>
+          <button mat-raised-button color="accent" class="custom-button">Delete</button>
+        </div>
+         </div> 
+        </div>
+  </div>

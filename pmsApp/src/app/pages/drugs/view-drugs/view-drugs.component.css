@@ -1,0 +1,16 @@
+.heading{
+    margin: auto;
+    align-items: center;
+  }
+
+  .button-container {
+    display: flex;
+    /*justify-content: space-between;*/
+  }
+  
+  .custom-button {
+
+    width: 80px; /* Reduces button width */
+    height: 30px; /* Reduces button height */
+  }
+  

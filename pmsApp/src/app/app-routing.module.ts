@@ -9,6 +9,11 @@ import { adminGuard } from './guards/admin.guard';
 import { doctorGuard } from './guards/doctor.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home/home.component';
+import { ViewDrugsComponent } from './pages/drugs/view-drugs/view-drugs.component';
+import { AddDrugsComponent } from './pages/drugs/add-drugs/add-drugs.component';
+import { EditDrugsComponent } from './pages/drugs/edit-drugs/edit-drugs.component';
+import { DeleteDrugsComponent } from './pages/drugs/delete-drugs/delete-drugs.component';
+import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-suppliers.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -32,7 +37,24 @@ const routes: Routes = [
     children:[
       {path: 'profile',
       component: ProfileComponent,
-      },{
+      },
+      {path: 'viewDrugs',
+      component: ViewDrugsComponent,
+      },
+      {path: 'addDrugs',
+      component: AddDrugsComponent,
+      },
+      {path: 'editDrugs',
+      component: EditDrugsComponent,
+      },
+      {path: 'deleteDrugs',
+      component: DeleteDrugsComponent,
+      },
+      {
+        path: 'viewSuppliers',
+        component: ViewSuppliersComponent,
+      },
+      {
         path:'',
         component:HomeComponent
       }
