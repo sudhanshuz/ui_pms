@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SupplierService } from 'src/app/services/supplier.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ViewSuppliersComponent implements OnInit{
 
   Suppliers=[];
 
-  constructor(private _supplier:SupplierService){
+  constructor(private _supplier:SupplierService, private snack:MatSnackBar){
 
   }
 
@@ -22,5 +23,22 @@ export class ViewSuppliersComponent implements OnInit{
       },
       //handle error here  
     );
+}
+
+deleteSupplier(id:any){
+  this._supplier.deleteSupplier(id).subscribe(
+    {
+      next: (v) => this.snack.open('successfully deleted','',{
+        duration:3000
+        
+      })
+      ,
+      error: (e) => this.snack.open('something went wrong','',{
+        duration:3000
+      }),
+      complete: () => console.info('complete')
+      //handle the error here
+  }
+  );
 }
 }

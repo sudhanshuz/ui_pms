@@ -4,32 +4,34 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <mat-card>
+  <h2 class="text-center">Add Suppliers</h2>
 <form (ngSubmit)="formSubmit()">
     <div>
-      <label for="drugName">Drug Name:</label>
-      <input type="text" id="drugName" [(ngModel)]="Drugs.drugName" name="drugName" required>
+      <label for="supplierId">supplier Id:</label>
+      <input type="number" id="supplierId" [(ngModel)]="Supplier.supplierId" name="supplierId" required>
     </div>
     <br>
     <div>
-      <label for="price">Price:</label>
-      <input type="number" id="price" [(ngModel)]="Drugs.price" name="price" required>
+      <label for="supplierName">supplierName:</label>
+      <input type="text" id="supplierName" [(ngModel)]="Supplier.supplierName" name="supplierName" required>
     </div>
     <br>
     <div>
-        <label for="date">Expiry Date:</label>
-        <input class="date" type="text" name="date" id="date" placeholder="dd/mm/yyyy" [(ngModel)]="Drugs.exp_date"  required >
+        <label for="supplierEmail">Email:</label>
+        <input  type="email" id="supplierEmail"  [(ngModel)]="Supplier.supplierEmail"  name="supplierEmail" required >
       </div>
       <br>
     <div>
-      <label for="id">Batch Id:</label>
-      <input type="text" id="batchId"  [(ngModel)]="Drugs.batchId" name="batchId" required>
+      <label for="supplierPhoneNo">Contact:</label>
+      <input type="text" id="supplierPhoneNo" [(ngModel)]="Supplier.supplierPhoneNo" name="supplierPhoneNo"  required>
     </div>
     <br>
     <div>
-        <button mat-raised-button color="accent" type="submit" class="custom" >Add Drug</button>
+        <button mat-raised-button color="accent" type="submit" class="custom" >Add Supplier</button>
       </div>
   </form>
 
 </mat-card>
 </body>
 </html>
+

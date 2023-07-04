@@ -16,4 +16,5 @@ export class OrdersService{
         public viewPickedUpOrders(){
           return this._http.get(`${baseUrl}/orders/viewPickedUpOrders`);
               }
+
 }

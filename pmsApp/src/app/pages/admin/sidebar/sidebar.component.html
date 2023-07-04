@@ -31,7 +31,7 @@
       Manage suppliers</button>
       <mat-menu #suppliers="matMenu">
         <button routerLink="/admin/viewSuppliers" mat-menu-item (click)="handleOptionClick('view Suppliers')">view Suppliers</button>
-        <button mat-menu-item (click)="handleOptionClick('add Suppliers')">add Suppliers</button>
+        <button routerLink="/admin/addSuppliers" mat-menu-item (click)="handleOptionClick('add Suppliers')">add Suppliers</button>
         <button mat-menu-item (click)="handleOptionClick('Edit suppliers')">Edit suppliers</button>
         <button mat-menu-item (click)="handleOptionClick('delete suppliers')">delete suppliers</button>
       </mat-menu>

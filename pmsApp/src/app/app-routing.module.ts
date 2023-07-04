@@ -16,6 +16,7 @@ import { DeleteDrugsComponent } from './pages/drugs/delete-drugs/delete-drugs.co
 import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-suppliers.component';
 import { OrdersComponent } from './pages/orders/orders/orders.component';
 import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
+import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -57,6 +58,10 @@ const routes: Routes = [
         component: ViewSuppliersComponent,
       },
       {
+        path: 'addSuppliers',
+        component: AddSuppliersComponent,
+      },
+      {
         path: 'viewNewOrders',
         component:OrdersComponent
       },
@@ -77,7 +82,11 @@ const routes: Routes = [
     children:[
       {path: 'profile',
       component: ProfileComponent,
-      },{
+      },
+      {path: 'search',
+      component: ViewDrugsComponent,
+      },
+      {
         path:'',
         component:HomeComponent
       }

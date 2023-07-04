@@ -28,8 +28,8 @@
           <h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5>
           <h5 ><b>Batch Id: </b>{{d['batchId']}}</h5>
           <div class="button-container">
-          <button mat-raised-button color="accent" class="custom-button">Edit</button>
-          <button mat-raised-button color="accent" class="custom-button">Delete</button>
+          <button *ngIf="getValue()" mat-raised-button color="accent" class="custom-button">Edit</button>
+          <button  *ngIf="getValue()" (click)="deleteDrugs(d['drugName'])" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
          </div> 
         </div>

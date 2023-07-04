@@ -12,4 +12,12 @@ export class SupplierService {
   public viewSuppliers(){
     return this._http.get(`${baseUrl}/supplier/getAll`);
         }
+
+        public addSuppliers(Supplier:any){
+          return this._http.post(`${baseUrl}/supplier/add`,Supplier);
+              }
+
+              public deleteSupplier(supplierId:any){
+                return this._http.delete(`${baseUrl}/supplier/delete/${supplierId}`,supplierId);
+              }
 }

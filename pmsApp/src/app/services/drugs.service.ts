@@ -14,4 +14,12 @@ export class DrugsService {
    public viewDrugs(){
     return this._http.get(`${baseUrl}/drugs/getAll`);
         }
+
+    public addDrugs(Drugs:any){
+      return this._http.post(`${baseUrl}/drugs/add`,Drugs); 
+    }
+
+    public deleteDrugs(drugName:any){
+      return this._http.delete(`${baseUrl}/drugs/deleteDrugByName/${drugName}`,drugName); 
+    }
 }

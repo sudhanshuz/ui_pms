@@ -35,6 +35,7 @@ import { DeleteDrugsComponent } from './pages/drugs/delete-drugs/delete-drugs.co
 import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-suppliers.component';
 import { OrdersComponent } from './pages/orders/orders/orders.component';
 import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
+import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-
     DeleteDrugsComponent,
     ViewSuppliersComponent,
     OrdersComponent,
-    PickedUpOrdersComponent
+    PickedUpOrdersComponent,
+    AddSuppliersComponent
   ],
   imports: [
     BrowserModule,
