@@ -14,7 +14,7 @@ export class ViewSuppliersComponent implements OnInit{
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this._supplier.viewSuppliers().subscribe(
       (data:any)=>{
         this.Suppliers=data;

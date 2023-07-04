@@ -38,15 +38,14 @@
 
       <!--orders-->
       <button mat-list-item 
-      [matMenuTriggerFor]="orders"
-      routerLink="/admin">
+      [matMenuTriggerFor]="orders">
       <mat-icon mat-list-icon>shopping_cart</mat-icon>
       Manage orders</button>
       <mat-menu #orders="matMenu">
         <button mat-menu-item (click)="handleOptionClick('add Orders')">add Orders</button>
-        <button mat-menu-item (click)="handleOptionClick('view new Orders')">view new Orders</button>
+        <button routerLink="/admin/viewNewOrders" mat-menu-item (click)="handleOptionClick('view new Orders')">view new Orders</button>
         <button mat-menu-item (click)="handleOptionClick('verify Orders')">verify Orders</button>
-        <button mat-menu-item (click)="handleOptionClick('view Picked up Orders')">view Picked up Orders</button>
+        <button routerLink="/admin/viewPickedUpOrders"  mat-menu-item (click)="handleOptionClick('view Picked up Orders')">view Picked up Orders</button>
       </mat-menu>
 
       <!--sales-->

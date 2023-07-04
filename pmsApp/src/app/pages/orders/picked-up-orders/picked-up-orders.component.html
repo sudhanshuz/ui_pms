@@ -1,0 +1,31 @@
+<h2 class="heading">
+    Picked up orders
+  </h2>  
+  <div >
+       <div class="card" *ngFor="let o of pickedUpOrders">
+        <div >
+          <h5 ><b>Id: </b>{{o['orderId']}}</h5>
+          <h5 ><b>name: </b>{{o['docName']}}</h5>
+          <h5 ><b>contact: </b>{{o['docContact']}}</h5>
+          <h5 ><b>email: </b>{{o['docEmail']}}</h5> 
+          <h5 ><b>total amount: </b>{{o['total']}}</h5>
+          <h5 ><b>pickup date: </b>{{o['pickupDate']}}</h5>
+          <h5 ><b>Items description:</b> 
+                <div *ngFor="let item of o['drugInfo'] | keyvalue">
+                  Drug name: {{ item.key }}, quantity: {{ item.value }}
+                </div>
+               
+          </h5>
+          <h5 ><b>supplierId: </b>{{o['supplierId']}}</h5> 
+          <div class="button-container">
+          <button mat-raised-button color="accent" class="custom-button">confirm order</button>
+        </div>
+         </div> 
+        </div>
+
+        <div class="card" *ngIf="pickedUpOrders.length===0">
+            <h1>no picked up  orders</h1>
+        </div>
+
+  </div>
+

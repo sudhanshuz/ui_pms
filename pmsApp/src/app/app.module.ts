@@ -33,6 +33,8 @@ import { AddDrugsComponent } from './pages/drugs/add-drugs/add-drugs.component';
 import { EditDrugsComponent } from './pages/drugs/edit-drugs/edit-drugs.component';
 import { DeleteDrugsComponent } from './pages/drugs/delete-drugs/delete-drugs.component';
 import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-suppliers.component';
+import { OrdersComponent } from './pages/orders/orders/orders.component';
+import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-su
     AddDrugsComponent,
     EditDrugsComponent,
     DeleteDrugsComponent,
-    ViewSuppliersComponent
+    ViewSuppliersComponent,
+    OrdersComponent,
+    PickedUpOrdersComponent
   ],
   imports: [
     BrowserModule,
