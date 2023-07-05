@@ -36,6 +36,9 @@ import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-su
 import { OrdersComponent } from './pages/orders/orders/orders.component';
 import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
 import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component'  
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,8 @@ import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppl
     ViewSuppliersComponent,
     OrdersComponent,
     PickedUpOrdersComponent,
-    AddSuppliersComponent
+    AddSuppliersComponent,
+    EditSuppliersComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +79,8 @@ import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppl
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [/*{
       provide: HTTP_INTERCEPTORS,

@@ -17,6 +17,7 @@ import { ViewSuppliersComponent } from './pages/suppliers/view-suppliers/view-su
 import { OrdersComponent } from './pages/orders/orders/orders.component';
 import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
 import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
+import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -47,7 +48,7 @@ const routes: Routes = [
       {path: 'addDrugs',
       component: AddDrugsComponent,
       },
-      {path: 'editDrugs',
+      {path: 'editDrugs/:drugName', 
       component: EditDrugsComponent,
       },
       {path: 'deleteDrugs',
@@ -60,6 +61,10 @@ const routes: Routes = [
       {
         path: 'addSuppliers',
         component: AddSuppliersComponent,
+      },
+      {
+        path: 'editSupplier/:supplierId',
+        component:EditSuppliersComponent
       },
       {
         path: 'viewNewOrders',

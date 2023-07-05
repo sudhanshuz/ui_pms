@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DrugsService } from 'src/app/services/drugs.service';
 import { LoginService } from 'src/app/services/login.service';
+
+
 
 @Component({
   selector: 'app-view-drugs',
@@ -11,6 +13,9 @@ import { LoginService } from 'src/app/services/login.service';
 
 export class ViewDrugsComponent implements OnInit{
     Drugs=[];
+    searchTerm: string="";
+    filterData:any;
+    isButtonClicked: boolean = false;
   constructor(private _drugs:DrugsService,public user:LoginService, private snack:MatSnackBar){
 
   }
@@ -32,6 +37,7 @@ export class ViewDrugsComponent implements OnInit{
         //handle error here  
       );
 
+
   }
 
   deleteDrugs(drugName:any){
@@ -39,7 +45,7 @@ export class ViewDrugsComponent implements OnInit{
       {
         next: (v) => this.snack.open('successfully deleted','',{
           duration:3000
-          
+           
         })
         ,
         error: (e) => this.snack.open('something went wrong','',{
@@ -50,4 +56,20 @@ export class ViewDrugsComponent implements OnInit{
     }
     );
   }
+  search() {
+    this._drugs.viewDrugByName(this.searchTerm).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this.filterData=data;
+        this.isButtonClicked=true;
+      },
+      //handle error here  
+    );
+  }
+
+  reset(){
+    this.isButtonClicked=false;
+  }
+
+
 }

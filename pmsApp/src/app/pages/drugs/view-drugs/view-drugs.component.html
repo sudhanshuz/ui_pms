@@ -17,10 +17,36 @@
 
 <!-- shopping-page.component.html -->
 
+
+
+
 <h2 class="heading">
     Drugs Inventory
-  </h2>  
-  <div>
+  </h2> 
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input [(ngModel)]="searchTerm"  matInput type="search" placeholder="Enter drug Name" >
+    <button  (click)="search()">Search</button>
+    <button  (click)="reset()">Reset</button>
+  </mat-form-field> 
+
+  <div *ngIf="isButtonClicked"> 
+    <div class="card" >
+        <div >
+            <h5 ><b>Name: </b>{{filterData.drugName}}</h5>
+            <h5 ><b>Price per pack: </b>{{filterData.price}}</h5>
+            <h5 ><b>Expiry date: </b>{{filterData.exp_date}}</h5>
+            <h5 ><b>Batch Id: </b>{{filterData.batchId}}</h5>
+        </div>
+        <div class="button-container">
+            <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+filterData['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
+            <button  *ngIf="getValue()" (click)="deleteDrugs(filterData.drugName)" mat-raised-button color="accent" class="custom-button">Delete</button>
+        </div>
+  </div>
+
+  </div>
+ 
+  <div *ngIf="!isButtonClicked">
        <div class="card" *ngFor="let d of Drugs">
         <div >
           <h5 ><b>Name: </b>{{d['drugName']}}</h5>
@@ -28,11 +54,28 @@
           <h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5>
           <h5 ><b>Batch Id: </b>{{d['batchId']}}</h5>
           <div class="button-container">
-          <button *ngIf="getValue()" mat-raised-button color="accent" class="custom-button">Edit</button>
+          <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+d['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
           <button  *ngIf="getValue()" (click)="deleteDrugs(d['drugName'])" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
-         </div> 
+         </div>
         </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> 
   </div>
+
+ <!-- <div>
+    <table class="card" *ngFor="let d of Drugs">
+     <tbody>
+        <tr>
+        <td><h5 ><b>Name: </b>{{d['drugName']}}</h5></td>
+        <td><h5 ><b>Price per pack: </b>{{d['price']}}</h5></td>
+        <td><h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5></td>
+        <td><h5 ><b>Batch Id: </b>{{d['batchId']}}</h5></td>
+    </tr>
+     </tbody>
+    </table>
+     </div>-->
+
+
+  
   
   

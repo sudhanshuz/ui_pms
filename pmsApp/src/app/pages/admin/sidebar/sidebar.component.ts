@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  constructor() {}
+
   handleOptionClick(option: string) {
     console.log('Selected option:', option);
-    // Add your logic here
+
+    
   }
   
 }

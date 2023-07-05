@@ -10,6 +10,9 @@ import { SupplierService } from 'src/app/services/supplier.service';
 export class ViewSuppliersComponent implements OnInit{
 
   Suppliers=[];
+  searchTerm: string="";
+  filterData:any;
+  isButtonClicked: boolean = false;
 
   constructor(private _supplier:SupplierService, private snack:MatSnackBar){
 
@@ -40,5 +43,22 @@ deleteSupplier(id:any){
       //handle the error here
   }
   );
+}
+
+
+
+search() {
+  this._supplier.viewSupplierByName(this.searchTerm).subscribe(
+    (data:any)=>{
+      console.log(data);
+      this.filterData=data;
+      this.isButtonClicked=true;
+    },
+    //handle error here  
+  );
+}
+
+reset(){
+  this.isButtonClicked=false;
 }
 }

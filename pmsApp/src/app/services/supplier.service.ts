@@ -20,4 +20,16 @@ export class SupplierService {
               public deleteSupplier(supplierId:any){
                 return this._http.delete(`${baseUrl}/supplier/delete/${supplierId}`,supplierId);
               }
+
+              public viewSupplierByName(supplierName:any){
+                return this._http.get(`${baseUrl}/supplier/viewSupplierByName/${supplierName}`,supplierName);
+              }
+
+              public editSupplier(Supplier:any){
+                return this._http.put(`${baseUrl}/supplier/edit`,Supplier);
+              }
+
+              public viewSupplierById(supplierId:any){
+                return this._http.get(`${baseUrl}/supplier/viewSupplierById/${supplierId}`,supplierId);
+              }
 }

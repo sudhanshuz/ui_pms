@@ -22,4 +22,12 @@ export class DrugsService {
     public deleteDrugs(drugName:any){
       return this._http.delete(`${baseUrl}/drugs/deleteDrugByName/${drugName}`,drugName); 
     }
-}
+    public viewDrugByName(drugName:any){
+      return this._http.get(`${baseUrl}/drugs/viewDrugByName/${drugName}`);
+          }
+
+          public editDrugs(Drugs:any){
+            return this._http.put(`${baseUrl}/drugs/edit`,Drugs);
+          }
+
+        }

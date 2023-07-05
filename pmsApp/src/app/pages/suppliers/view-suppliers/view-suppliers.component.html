@@ -1,7 +1,32 @@
 <h2 class="heading">
     Suppliers
-  </h2>  
-  <div>
+  </h2> 
+
+  <!--search bar-->
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input [(ngModel)]="searchTerm"  matInput type="search" placeholder="Enter supplier Name" >
+    <button  (click)="search()">Search</button>
+    <button  (click)="reset()">Reset</button>
+  </mat-form-field> 
+
+  <!--if button is clicked then show the searched item-->
+  <div *ngIf="isButtonClicked">
+    <div class="card" >
+        <div >
+            <h5 ><b>Id: </b>{{filterData.supplierId}}</h5>
+            <h5 ><b>Name: </b>{{filterData.supplierName}}</h5>
+            <h5 ><b>Email: </b>{{filterData.supplierEmail}}</h5>
+            <h5 ><b>contact: </b>{{filterData.supplierPhoneNo}}</h5>
+        </div>
+        <div class="button-container">
+            <button  mat-raised-button color="accent" class="custom-button">Edit</button>
+            <button  (click)="deleteSupplier(filterData.supplierName)" mat-raised-button color="accent" class="custom-button">Delete</button>
+        </div>
+  </div>
+
+  </div> 
+  <div *ngIf="!isButtonClicked">
        <div class="card" *ngFor="let s of Suppliers">
         <div >
           <h5 ><b>Id: </b>{{s['supplierId']}}</h5>
@@ -17,9 +42,9 @@
                
           </h5>
           <div class="button-container">
-          <button mat-raised-button color="accent" class="custom-button">Edit</button>
+          <button [routerLink]="'/admin/editSupplier/'+s['supplierId']" mat-raised-button color="accent" class="custom-button">Edit</button>
           <button (click)="deleteSupplier(s['supplierId'])" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
          </div> 
-        </div>
+        </div> 
   </div>
