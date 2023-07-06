@@ -18,6 +18,7 @@ export class OrdersComponent {
     this._orders.viewNewOrders().subscribe(
       (data:any)=>{
         this._orders=data;
+        this.Orders=data;
         console.log(this._orders);
       },
       //handle error here  

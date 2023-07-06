@@ -18,6 +18,8 @@ import { OrdersComponent } from './pages/orders/orders/orders.component';
 import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-up-orders.component';
 import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
 import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component';
+import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
+import { WaitComponent } from './pages/orders/wait/wait.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -90,6 +92,12 @@ const routes: Routes = [
       },
       {path: 'search',
       component: ViewDrugsComponent,
+      },
+      {path: 'placeOrder/:drugName',
+      component:PlaceOrderComponent,
+      },
+      {path: 'wait',
+      component:WaitComponent,
       },
       {
         path:'',

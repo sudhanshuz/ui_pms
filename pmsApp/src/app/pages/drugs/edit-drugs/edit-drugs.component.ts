@@ -24,7 +24,7 @@ export class EditDrugsComponent {
     );
 
 
-  }
+  } 
 
   public editDrugs(){
     this._drugs.editDrugs(this.Drugs).subscribe(

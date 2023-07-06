@@ -38,7 +38,9 @@ import { PickedUpOrdersComponent } from './pages/orders/picked-up-orders/picked-
 import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppliers.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component'  
+import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component';
+import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
+import { WaitComponent } from './pages/orders/wait/wait.component'  
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,9 @@ import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-su
     OrdersComponent,
     PickedUpOrdersComponent,
     AddSuppliersComponent,
-    EditSuppliersComponent
+    EditSuppliersComponent,
+    PlaceOrderComponent,
+    WaitComponent
   ],
   imports: [
     BrowserModule,

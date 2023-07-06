@@ -1,0 +1,53 @@
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<mat-card *ngIf="!Data">
+<form (ngSubmit)="placeOrder()">
+    <div>
+      <label for="docName">Name:</label>
+      <input type="text" id="docName" [(ngModel)]="Orders.docName" name="docName" required >
+    </div>
+    <br>
+    <div> 
+      <label for="docEmail">Email:</label> 
+      <input type="email" id="docEmail" [(ngModel)]="Orders.docEmail" name="docEmail" required>
+    </div>
+    <br>
+    <div>
+        <label for="docContact">Contact:</label>
+        <input  type="text" name="docContact" id="docContact"  [(ngModel)]="Orders.docContact"  required >
+      </div>
+      <br>
+      <div>
+        <label for="drugName">drug name:</label>
+        <input  type="text" name="drugName" id="drugName"  [(ngModel)]="Orders.drugName"  required >
+      </div>
+      <br>
+      <div>
+        <label for="qty">quantity:</label>
+        <input  type="text" name="qty" id="qty"  [(ngModel)]="Orders.qty"  required >
+      </div>
+      <br>
+      <div>
+        <button mat-raised-button color="accent" type="submit" class="custom" >Confirm Order</button>
+      </div>
+      
+  </form>
+
+</mat-card>
+
+
+<div *ngIf="Data">
+    <div class="card" >
+      <div><h5 ><b>OrderId: </b>{{Data.orderId}}</h5></div> 
+      <div><h5 ><b>Drug Name: </b>{{Data.drugName}}</h5></div>
+      <div><h5 ><b>Quantity: </b>{{Data.qty}}</h5> </div>
+      <div><h5 ><b>Amount to be Paid: </b>{{Data.total}}</h5></div> 
+  </div>
+  </div>
+</body>
+</html>
+
+

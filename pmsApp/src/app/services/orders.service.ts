@@ -17,4 +17,10 @@ export class OrdersService{
           return this._http.get(`${baseUrl}/orders/viewPickedUpOrders`);
               }
 
+              public placeOrder(Orders:any){
+                return this._http.post(`${baseUrl}/orders/add`,Orders);
+              }
+
+
+
 }

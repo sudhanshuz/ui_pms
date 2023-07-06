@@ -19,6 +19,7 @@ export class PickedUpOrdersComponent {
     this._pickedUpOrders.viewPickedUpOrders().subscribe(
       (data:any)=>{
         this._pickedUpOrders=data;
+        this.pickedUpOrders=data;
         console.log(this._pickedUpOrders);
       },
       //handle error here  
