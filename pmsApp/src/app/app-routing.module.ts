@@ -20,6 +20,7 @@ import { AddSuppliersComponent } from './pages/suppliers/add-suppliers/add-suppl
 import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component';
 import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
 import { WaitComponent } from './pages/orders/wait/wait.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -98,6 +99,9 @@ const routes: Routes = [
       },
       {path: 'wait/:orderId',
       component:WaitComponent,
+      },
+      {path: 'pay',
+      component:PaymentComponent,
       },
       {
         path:'',

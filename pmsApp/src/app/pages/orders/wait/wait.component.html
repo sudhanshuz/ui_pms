@@ -1,1 +1,9 @@
-
+<div class="card">
+<div><h2><b>Order Id: </b> {{orderId}}</h2></div>
+<div><h2><b>drug name: </b> {{Order['drugName']}}</h2></div>
+<div><h2><b>quantity: </b> {{Order.qty}}</h2></div>
+<div><h2><b>amount to be paid: </b> {{Order.total}}</h2></div>
+</div>
+<div *ngIf="Order.verified">
+    <button mat-raised-button color="accent">Proceed to payment</button>
+</div>

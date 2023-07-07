@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { OrdersService } from 'src/app/services/orders.service';
+import { PageReloadService } from 'src/app/services/page-reload.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class OrdersComponent {
   Orders=[];
 
-  constructor(private _orders:OrdersService,private _user:UserService,private snack:MatSnackBar){
+  constructor(private _orders:OrdersService,private _user:UserService,private snack:MatSnackBar,private _pageRelod:PageReloadService){
 
   }
 
@@ -25,6 +26,7 @@ export class OrdersComponent {
       },
       //handle error here  
     );
+
 }
 
 verifyOrder(orderId:string){
@@ -32,7 +34,7 @@ verifyOrder(orderId:string){
 {
   next:(v)=>{
     this.snack.open("verified successfully");
-    
+    this._pageRelod.reloadPage();
     console.log(v);
   },
   error:(e)=>{

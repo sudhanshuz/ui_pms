@@ -11,9 +11,8 @@
           <h5 ><b>total amount: </b>{{o['total']}}</h5>
           <h5 ><b>pickup date: </b>{{o['pickupDate']}}</h5>
           <h5 ><b>Items description:</b> 
-                <div *ngFor="let item of o['drugInfo'] | keyvalue">
-                  Drug name: {{ item.key }}, quantity: {{ item.value }}
-                </div>
+            <div>drug name: {{o['drugName']}}</div>
+            <div>qty: {{o['qty']}}</div>
                
           </h5>
           <h5 ><b>supplierId: </b>{{o['supplierId']}}</h5> 

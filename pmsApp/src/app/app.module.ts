@@ -40,7 +40,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-suppliers.component';
 import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
-import { WaitComponent } from './pages/orders/wait/wait.component'  
+import { WaitComponent } from './pages/orders/wait/wait.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { WaitComponent } from './pages/orders/wait/wait.component'
     AddSuppliersComponent,
     EditSuppliersComponent,
     PlaceOrderComponent,
-    WaitComponent
+    WaitComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
