@@ -46,6 +46,11 @@
       <div><h5 ><b>Quantity: </b>{{Data.qty}}</h5> </div>
       <div><h5 ><b>Amount to be Paid: </b>{{Data.total}}</h5></div> 
   </div>
+
+  <div *ngIf="Data['verified']">
+    {{Data.verified}}
+      <button>Pay</button>
+  </div>
   </div>
 </body>
 </html>

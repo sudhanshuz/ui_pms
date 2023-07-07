@@ -4,19 +4,17 @@
   <div >
        <div class="card" *ngFor="let o of Orders">
         <div >
-          <h5 ><b>Id: </b>{{o['orderId']}}</h5>
+          <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
           <h5 ><b>name: </b>{{o['docName']}}</h5>
           <h5 ><b>contact: </b>{{o['docContact']}}</h5>
           <h5 ><b>email: </b>{{o['docEmail']}}</h5>
           <h5 ><b>total amount: </b>{{o['total']}}</h5>
           <h5 ><b>Items description:</b> 
-                <div *ngFor="let item of o['drugInfo'] | keyvalue">
-                  Drug name: {{ item.key }}, quantity: {{ item.value }}
-                </div>
-               
+                 <div> Drug name: {{ o['drugName'] }}</div>
+                  <div> quantity: {{ o['qty'] }}</div>
           </h5> 
           <div class="button-container">
-          <button mat-raised-button color="accent" class="custom-button">Verify</button>
+          <button mat-raised-button color="accent" (click)="verifyOrder(o['orderId'])" class="custom-button">Verify</button>
         </div>
          </div> 
         </div>

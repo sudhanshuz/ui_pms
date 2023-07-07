@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { OrdersService } from 'src/app/services/orders.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
-})
+}) 
 export class OrdersComponent {
   Orders=[];
 
-  constructor(private _orders:OrdersService){
+  constructor(private _orders:OrdersService,private _user:UserService,private snack:MatSnackBar){
 
   }
 
@@ -23,5 +25,21 @@ export class OrdersComponent {
       },
       //handle error here  
     );
+}
+
+verifyOrder(orderId:string){
+  this._user.verifyOrderById(orderId).subscribe(
+{
+  next:(v)=>{
+    this.snack.open("verified successfully");
+    
+    console.log(v);
+  },
+  error:(e)=>{
+console.log(e);
+console.log(this.Orders);
+  },
+}
+  );
 }
 }

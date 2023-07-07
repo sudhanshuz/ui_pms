@@ -21,6 +21,11 @@ export class OrdersService{
                 return this._http.post(`${baseUrl}/orders/add`,Orders);
               }
 
+              public getOrderById(orderId:any){
+                return this._http.get(`${baseUrl}/orders/getOrdersById/${orderId}`,orderId);
+
+              }
+
 
 
 }

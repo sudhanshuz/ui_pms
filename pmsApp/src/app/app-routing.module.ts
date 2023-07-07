@@ -96,7 +96,7 @@ const routes: Routes = [
       {path: 'placeOrder/:drugName',
       component:PlaceOrderComponent,
       },
-      {path: 'wait',
+      {path: 'wait/:orderId',
       component:WaitComponent,
       },
       {

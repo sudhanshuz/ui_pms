@@ -33,7 +33,6 @@ public Orders={
 }
   drugName:string="";
 
-  @Output() event=new EventEmitter<any>();
 
   constructor(private _route:ActivatedRoute,private _drugs:DrugsService,private snack:MatSnackBar
     , private _router:Router, private _orders:OrdersService, private _login:LoginService
@@ -53,7 +52,7 @@ public Orders={
       this.Orders.docContact=this.User.contact;
 
       
-  }
+  } 
   
   public placeOrder(){
 
@@ -63,7 +62,7 @@ public Orders={
         next: (v) => Swal.fire('Order placed successfully').then((e)=>{
           //here navigate to payment page if confirmed by admin
           this.Data=v;
-         // this._router.navigate(['/doctor/wait']);
+         this._router.navigate(['/doctor/wait/'+this.Data.orderId]);
           console.log(v);
         })
         ,

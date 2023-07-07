@@ -16,5 +16,7 @@ export class UserService {
     return this.http.post(`${baseUrl}/user/add`,User);
   }
 
-
+public verifyOrderById(orderId:any){
+return this.http.put(`${baseUrl}/user/verifyOrderByOrderId/${orderId}`,orderId);
+}
 }
