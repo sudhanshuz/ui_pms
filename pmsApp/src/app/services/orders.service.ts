@@ -26,6 +26,10 @@ export class OrdersService{
 
               }
 
+              public getMyOrdersByDocName(fullName:any){
+                return this._http.get(`${baseUrl}/orders/getMyOrdersByDocName/${fullName}`,fullName);
+              }
+
 
 
 }

@@ -21,6 +21,7 @@ import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-su
 import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
 import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -102,6 +103,9 @@ const routes: Routes = [
       },
       {path: 'pay/:orderId',
       component:PaymentComponent,
+      },
+      {path: 'myOrder/:fullName',
+      component:MyOrdersComponent,
       },
       {
         path:'',

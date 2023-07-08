@@ -42,6 +42,7 @@ import { EditSuppliersComponent } from './pages/suppliers/edit-suppliers/edit-su
 import { PlaceOrderComponent } from './pages/orders/place-order/place-order.component';
 import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
     EditSuppliersComponent,
     PlaceOrderComponent,
     WaitComponent,
-    PaymentComponent
+    PaymentComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,

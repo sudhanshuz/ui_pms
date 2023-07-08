@@ -1,0 +1,13 @@
+<div >
+    <div class="card" *ngFor="let o of Order">
+     <div >
+       <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
+       <h5 ><b>total amount: </b>{{o['total']}}</h5>
+       <h5 ><b>Items description:</b> 
+              <div> Drug name: {{ o['drugName'] }}</div>
+               <div> quantity: {{ o['qty'] }}</div>
+       </h5> 
+       <h5 ><b>expected Delivery date: </b>{{o['pickupDate']}}</h5>
+       </div>
+       </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OrdersService } from 'src/app/services/orders.service';
 import { PaymentService } from 'src/app/services/payment.service';
 
 
@@ -19,8 +21,19 @@ export class PaymentComponent {
     phoneNumber:'',
     amount:''
   };
-constructor(private payment:PaymentService){
-  
+
+  orderId:any;
+constructor(private payment:PaymentService,private Orders:OrdersService,private _route:ActivatedRoute){
+  this['orderId']=this._route.snapshot.params['orderId'];
+  this.Orders.getOrderById(this.orderId).subscribe(
+    (data:any)=>{
+      this.formData.customerName=data.docName;
+      this.formData.email=data.docEmail;
+      this.formData.phoneNumber=data.docContact;
+      this.formData.amount=data.total;
+      console.log(data);
+    },
+  );
 }
 
   message:any = "Not yet stared";
@@ -56,6 +69,7 @@ constructor(private payment:PaymentService){
     }
   };
 
+
   payNow() {
     this.paymentId = '';
     this.error = '';
@@ -87,7 +101,6 @@ constructor(private payment:PaymentService){
     },
     );
   }
-
 
 
 
