@@ -13,8 +13,13 @@ export class NavbarComponent {
   }
 
   localStorageIsEmpty(): boolean {
-    return localStorage.length === 0;
+    return localStorage.getItem('User')==null;
   }
+
+  public isLoggedIn():boolean{
+    return this.login.isLoggedIn();
+  }
+  
 
   public logout(){
     this.login.logout();

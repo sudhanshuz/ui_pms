@@ -29,9 +29,9 @@ export class EditSuppliersComponent {
   public editSupplier(){
     this._supplier.editSupplier(this.Supplier).subscribe(
       {
-        next: (v) => Swal.fire('updated successfully').then((e)=>{
+        next: (v) =>{
           this._router.navigate(['/admin/viewSuppliers']);
-        })
+        }
         ,
         error: (e) => this.snack.open('something went wrong','',{
           duration:3000

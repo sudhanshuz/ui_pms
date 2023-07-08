@@ -59,16 +59,16 @@ public Orders={
     console.log(this.Orders);
     this._orders.placeOrder(this.Orders).subscribe(
       {
-        next: (v) => Swal.fire('Order placed successfully').then((e)=>{
+        next: (v) =>{
           //here navigate to payment page if confirmed by admin
           this.Data=v;
          this._router.navigate(['/doctor/wait/'+this.Data.orderId]);
           console.log(v);
-        })
+        }
         ,
-        error: (e) =>Swal.fire('something went wrong').then((f)=>{
+        error: (e) =>{
         console.log(this.Orders);
-        }),
+        },
         complete: () => console.info('complete')
         //handle the error here
     }

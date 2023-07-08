@@ -1,3 +1,38 @@
 <p>Angular v16 launched</p>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<button (click)="payNow()">Pay amount</button>
+
+<form (ngSubmit)="payNow()"> 
+    <mat-form-field class="full-width">
+      <input
+      [(ngModel)]="formData.customerName"
+      name="customerName"
+      matInput placeholder="customerName" required>
+      <mat-error>customerName is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+      [(ngModel)]="formData.email"
+      name="email" 
+      matInput placeholder="email" required>
+      <mat-error>email is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input 
+        [(ngModel)]="formData.phoneNumber"
+        name="phoneNumber"
+        matInput placeholder="phoneNumber" type="tel" required>
+        <mat-error>contact is required</mat-error>
+      </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <input 
+      [(ngModel)]="formData.amount"
+      name="amount"
+      matInput placeholder="amount" type="number" required>
+      <mat-error>amount is required</mat-error>
+    </mat-form-field>
+    <button type="submit">Pay amount</button>
+    </form>
+

@@ -29,9 +29,9 @@ export class EditDrugsComponent {
   public editDrugs(){
     this._drugs.editDrugs(this.Drugs).subscribe(
       {
-        next: (v) => Swal.fire('updated successfully').then((e)=>{
-          this._router.navigate(['/admin/viewDrugs']);
-        })
+        next: (v) =>{
+          this._router.navigate(['/admin/viewDrugs'])
+        }
         ,
         error: (e) => this.snack.open('something went wrong','',{
           duration:3000

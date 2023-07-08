@@ -100,7 +100,7 @@ const routes: Routes = [
       {path: 'wait/:orderId',
       component:WaitComponent,
       },
-      {path: 'pay',
+      {path: 'pay/:orderId',
       component:PaymentComponent,
       },
       {

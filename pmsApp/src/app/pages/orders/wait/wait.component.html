@@ -4,6 +4,10 @@
 <div><h2><b>quantity: </b> {{Order.qty}}</h2></div>
 <div><h2><b>amount to be paid: </b> {{Order.total}}</h2></div>
 </div>
+
+<div *ngIf="!Order.verified">
+please wait order is being verified
+</div>
 <div *ngIf="Order.verified">
-    <button mat-raised-button color="accent">Proceed to payment</button>
+    <button [routerLink]="'/doctor/pay/'+Order['orderId']" mat-raised-button color="accent">Proceed to payment</button>
 </div>
