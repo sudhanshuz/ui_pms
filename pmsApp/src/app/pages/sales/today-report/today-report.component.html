@@ -1,0 +1,18 @@
+<div *ngIf="Sales">
+    <div class="card" >
+        <div >
+            <h5 ><b>Id: </b>{{Sales.salesId}}</h5>
+            <div><b>Drugs sold: </b></div>
+            <div *ngFor="let d of Sales['drugName']">
+                <div>{{d}}</div>
+            </div>
+            <br>
+            <h5 ><b>Date: </b>{{Sales.dateAndTime}}</h5>
+            <h5 ><b>Total amount: </b>{{Sales.totalAmt}}</h5>
+            <h5 ><b>Paid Amount: </b>{{Sales.paidAmt}}</h5>
+        </div>
+        <div class="button-container">
+            <button  mat-raised-button color="accent" class="custom-button">download</button>
+        </div>
+  </div>
+  </div>

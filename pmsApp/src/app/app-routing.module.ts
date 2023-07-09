@@ -23,6 +23,7 @@ import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.component';
+import { TodayReportComponent } from './pages/sales/today-report/today-report.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -82,6 +83,10 @@ const routes: Routes = [
       {
         path: 'viewReports',
         component:ViewReportsComponent
+      },
+      {
+        path: 'todayReport',
+        component:TodayReportComponent
       },
       {
         path:'',

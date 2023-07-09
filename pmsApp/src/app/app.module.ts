@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { DatePipe } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,6 +44,7 @@ import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.component';
+import { TodayReportComponent } from './pages/sales/today-report/today-report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.co
     PaymentComponent,
     MyOrdersComponent,
     ViewReportsComponent,
+    TodayReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +99,7 @@ import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.co
       useClass: TokenInterceptor,
       multi: true,
     }*/
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
