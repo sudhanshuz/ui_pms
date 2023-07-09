@@ -43,6 +43,7 @@ import { PlaceOrderComponent } from './pages/orders/place-order/place-order.comp
 import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,8 @@ import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
     PlaceOrderComponent,
     WaitComponent,
     PaymentComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    ViewReportsComponent,
   ],
   imports: [
     BrowserModule,

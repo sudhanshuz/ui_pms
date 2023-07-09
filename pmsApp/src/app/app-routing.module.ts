@@ -22,6 +22,7 @@ import { PlaceOrderComponent } from './pages/orders/place-order/place-order.comp
 import { WaitComponent } from './pages/orders/wait/wait.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path: 'viewPickedUpOrders',
         component:PickedUpOrdersComponent
+      },
+      {
+        path: 'viewReports',
+        component:ViewReportsComponent
       },
       {
         path:'',

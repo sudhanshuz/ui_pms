@@ -55,8 +55,8 @@
       <mat-icon mat-list-icon>sell</mat-icon>
       Sales Reports</button>
       <mat-menu #sales="matMenu">
-        <button mat-menu-item (click)="handleOptionClick('view Sales Report')">view Sales Report</button>
-        <button mat-menu-item (click)="handleOptionClick('Download sales Report')">Download sales Report</button>
+        <button mat-menu-item routerLink="/admin/viewReports" (click)="handleOptionClick('view Sales Report')">view Sales Report</button>
+        <button mat-menu-item  (click)="handleOptionClick('Add Todays Reports')">Add Todays Reports</button>
       </mat-menu>
 
     </mat-action-list>

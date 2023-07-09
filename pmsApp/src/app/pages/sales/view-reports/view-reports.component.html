@@ -1,0 +1,19 @@
+<div *ngIf="Sales">
+    <div class="card" *ngFor="let s of Sales" >
+        <div >
+            <h5 ><b>Id: </b>{{s.salesId}}</h5>
+            <div><b>Drugs sold: </b></div>
+            <div *ngFor="let d of s['drugName']">
+                <div>{{d}}</div>
+            </div>
+            <br>
+            <h5 ><b>Date: </b>{{s.dateAndTime}}</h5>
+            <h5 ><b>Total amount: </b>{{s.totalAmt}}</h5>
+            <h5 ><b>Paid Amount: </b>{{s.paidAmt}}</h5>
+        </div>
+        <div class="button-container">
+            <button  mat-raised-button color="accent" class="custom-button">download</button>
+            <button   (click)="deleteReports(s.salesId)" mat-raised-button color="accent" class="custom-button">Delete</button>
+        </div>
+  </div>
+  </div>
