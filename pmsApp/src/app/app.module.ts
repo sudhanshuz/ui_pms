@@ -13,7 +13,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -99,7 +99,9 @@ import { TodayReportComponent } from './pages/sales/today-report/today-report.co
       useClass: TokenInterceptor,
       multi: true,
     }*/
-    DatePipe
+    DatePipe,
+    MatSnackBarModule,
+    MatSnackBar
   ],
   bootstrap: [AppComponent]
 })

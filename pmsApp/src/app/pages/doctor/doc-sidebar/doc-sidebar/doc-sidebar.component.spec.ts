@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { DocSidebarComponent } from './doc-sidebar.component';
 
 describe('DocSidebarComponent', () => {
@@ -8,6 +8,7 @@ describe('DocSidebarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [DocSidebarComponent]
     });
     fixture = TestBed.createComponent(DocSidebarComponent);

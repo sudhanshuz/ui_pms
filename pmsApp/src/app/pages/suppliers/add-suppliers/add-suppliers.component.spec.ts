@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { AddSuppliersComponent } from './add-suppliers.component';
 
 describe('AddSuppliersComponent', () => {
@@ -8,6 +8,7 @@ describe('AddSuppliersComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [AddSuppliersComponent]
     });
     fixture = TestBed.createComponent(AddSuppliersComponent);

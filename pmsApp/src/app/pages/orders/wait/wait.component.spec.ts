@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { WaitComponent } from './wait.component';
 
 describe('WaitComponent', () => {
@@ -8,6 +8,7 @@ describe('WaitComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [WaitComponent]
     });
     fixture = TestBed.createComponent(WaitComponent);

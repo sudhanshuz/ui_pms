@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { SignUpComponent } from './sign-up.component';
 
 describe('SignUpComponent', () => {
@@ -8,6 +9,7 @@ describe('SignUpComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule,MatSnackBarModule],
       declarations: [SignUpComponent]
     });
     fixture = TestBed.createComponent(SignUpComponent);

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { AddDrugsComponent } from './add-drugs.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('AddDrugsComponent', () => {
   let component: AddDrugsComponent;
@@ -8,6 +9,7 @@ describe('AddDrugsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule,MatSnackBarModule],
       declarations: [AddDrugsComponent]
     });
     fixture = TestBed.createComponent(AddDrugsComponent);

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { PlaceOrderComponent } from './place-order.component';
 
 describe('PlaceOrderComponent', () => {
@@ -8,6 +8,7 @@ describe('PlaceOrderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [PlaceOrderComponent]
     });
     fixture = TestBed.createComponent(PlaceOrderComponent);

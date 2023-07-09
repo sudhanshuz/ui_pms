@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { DeleteDrugsComponent } from './delete-drugs.component';
 
 describe('DeleteDrugsComponent', () => {
@@ -8,6 +8,7 @@ describe('DeleteDrugsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [DeleteDrugsComponent]
     });
     fixture = TestBed.createComponent(DeleteDrugsComponent);

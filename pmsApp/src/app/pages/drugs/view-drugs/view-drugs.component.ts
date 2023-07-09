@@ -18,7 +18,7 @@ export class ViewDrugsComponent implements OnInit{
     isButtonClicked: boolean = false;
   constructor(private _drugs:DrugsService,public user:LoginService, private snack:MatSnackBar){
 
-  }
+  } 
 
   getValue(){
     let User= localStorage.getItem("User");
