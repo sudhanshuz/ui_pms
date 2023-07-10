@@ -6,7 +6,7 @@
     <div mat-subheader>
       Menu
     </div>
-    <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon>Home</button>
+   <!-- <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon>Home</button>-->
       <button mat-list-item routerLink="/admin/profile">
         <mat-icon mat-list-icon>account_circle</mat-icon>
         Profile
@@ -44,14 +44,13 @@
       <mat-menu #orders="matMenu">
        <!-- <button mat-menu-item (click)="handleOptionClick('add Orders')">add Orders</button>-->
         <button routerLink="/admin/viewNewOrders" mat-menu-item (click)="handleOptionClick('view new Orders')">view new Orders</button>
-       <!-- <button mat-menu-item (click)="handleOptionClick('verify Orders')">verify Orders</button>-->
+        <button routerLink="/admin/supplierPickup" mat-menu-item (click)="handleOptionClick('verify Orders')">Pickup Order</button>
         <button routerLink="/admin/viewPickedUpOrders"  mat-menu-item (click)="handleOptionClick('view Picked up Orders')">view Picked up Orders</button>
       </mat-menu>
 
       <!--sales-->
       <button mat-list-item 
-      [matMenuTriggerFor]="sales"
-      routerLink="/admin">
+      [matMenuTriggerFor]="sales">
       <mat-icon mat-list-icon>sell</mat-icon>
       Sales Reports</button>
       <mat-menu #sales="matMenu">

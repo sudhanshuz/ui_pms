@@ -24,6 +24,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.component';
 import { TodayReportComponent } from './pages/sales/today-report/today-report.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/supplier-pickup.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -38,6 +40,11 @@ const routes: Routes = [
   {
     path:'welcome',
     component:WelcomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path:'image',
+    component:ImageUploadComponent,
     pathMatch: 'full'
   },
   {
@@ -89,9 +96,10 @@ const routes: Routes = [
         component:TodayReportComponent
       },
       {
-        path:'',
-        component:HomeComponent
-      }
+        path: 'supplierPickup',
+        component:SupplierPickupComponent
+      },
+
     ]
   },
   {

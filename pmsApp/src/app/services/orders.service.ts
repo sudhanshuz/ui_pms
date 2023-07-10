@@ -30,6 +30,14 @@ export class OrdersService{
                 return this._http.get(`${baseUrl}/orders/getMyOrdersByDocName/${fullName}`,fullName);
               }
 
+              public viewVerifiedOrders(){
+                return this._http.get(`${baseUrl}/supplier/viewAvailableOrders`);
+              }
+
+              public pickUpOrder(orderId:any,supplierId:any){
+                return this._http.put(`${baseUrl}/supplier/pickUpOrder/${orderId}/${supplierId}`,orderId,supplierId);
+              }
+
 
 
 }

@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 }) 
-export class OrdersComponent {
+export class OrdersComponent { 
   Orders=[];
 
   constructor(private _orders:OrdersService,private _user:UserService,private snack:MatSnackBar,private _pageRelod:PageReloadService){
@@ -21,7 +21,7 @@ export class OrdersComponent {
     this._orders.viewNewOrders().subscribe(
       (data:any)=>{
         this._orders=data;
-        this.Orders=data;
+        this.Orders=data; 
         console.log(this._orders);
       },
       //handle error here  
