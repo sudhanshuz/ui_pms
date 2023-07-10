@@ -1,0 +1,19 @@
+form {
+    max-width: 100px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+  
+  button {
+    width: 100%;
+  }
+  
+
+h1{
+    width: 100%;
+}
+.custom{
+  align-items: center;
+  margin: auto;
+}

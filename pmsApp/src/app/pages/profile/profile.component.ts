@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +9,15 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class ProfileComponent implements OnInit{
 
-constructor(public login:LoginService){
-
+  name:any;
+  role:any;
+constructor(public login:LoginService,private _user:UserService){
+this.name=login.getUser().name;
+this.role=login.getUser().role;
+console.log(this.name);
+  
 }
   ngOnInit(): void {
+
   }
 }

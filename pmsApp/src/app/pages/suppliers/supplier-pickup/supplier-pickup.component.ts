@@ -22,6 +22,7 @@ constructor(private _orders:OrdersService){
 }
 
 PickupOrder(){
+  console.log(this.supplierId);
   this._orders.pickUpOrder(this.Orders.orderId,this.supplierId).subscribe(
     {
       next:(data)=>{

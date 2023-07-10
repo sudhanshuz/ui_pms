@@ -57,14 +57,19 @@ export class ViewDrugsComponent implements OnInit{
     );
   }
   search() {
-    this._drugs.viewDrugByName(this.searchTerm).subscribe(
-      (data:any)=>{
+    this._drugs.viewDrugByName(this.searchTerm).subscribe({
+      next:(data)=>{
         console.log(data);
         this.filterData=data;
         this.isButtonClicked=true;
       },
-      //handle error here  
-    );
+      //handle error here
+      error:(e)=>{
+        this.snack.open("incorrect drug name",'',{
+          duration:3000
+        });
+      }  
+  });
   }
 
   reset(){

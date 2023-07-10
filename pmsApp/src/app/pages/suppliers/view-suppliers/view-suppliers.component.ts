@@ -19,13 +19,22 @@ export class ViewSuppliersComponent implements OnInit{
   }
 
   ngOnInit(): void { 
-    this._supplier.viewSuppliers().subscribe(
-      (data:any)=>{
+    this._supplier.viewSuppliers().subscribe({
+
+      next:(data:any)=>{
         this.Suppliers=data;
         console.log(this.Suppliers);
       },
+      error:(e)=>{
+        this.snack.open("supplier not available",'',
+        {
+          duration:3000
+        }
+        )
+      }
+
       //handle error here  
-    );
+  });
 }
 
 deleteSupplier(id:any){
@@ -48,14 +57,25 @@ deleteSupplier(id:any){
 
 
 search() {
-  this._supplier.viewSupplierByName(this.searchTerm).subscribe(
-    (data:any)=>{
+  this._supplier.viewSupplierByName(this.searchTerm).subscribe({
+    next:(data:any)=>{
       console.log(data);
+      if(data!==null){
       this.filterData=data;
-      this.isButtonClicked=true;
+      this.isButtonClicked=true;}
+      else{
+        this.snack.open('invalid name','',{
+          duration:3000
+        });
+      }
     },
+    error:(e)=>{this.snack.open('invalid name','',{
+      duration:3000
+    });
+
+    }
     //handle error here  
-  );
+});
 }
 
 reset(){

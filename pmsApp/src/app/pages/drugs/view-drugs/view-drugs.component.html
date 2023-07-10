@@ -39,9 +39,9 @@
             <h5 ><b>Batch Id: </b>{{filterData.batchId}}</h5>
         </div>
         <div class="button-container">
-            <button *ngIf="getValue()" routerLink="'/admin/editDrugs/'+filterData['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
+            <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+filterData['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
             <button  *ngIf="getValue()" (click)="deleteDrugs(filterData.drugName)" mat-raised-button color="accent" class="custom-button">Delete</button>
-            <button  *ngIf="!getValue()" routerLink="'/doctor/placeOrder/'+filterData['drugName']"  mat-raised-button color="accent" class="custom-button">Buy</button>
+            <button  *ngIf="!getValue()" [routerLink]="'/doctor/placeOrder/'+filterData['drugName']"  mat-raised-button color="accent" class="custom-button">Buy</button>
         </div>
   </div>
 

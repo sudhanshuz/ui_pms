@@ -1,8 +1,8 @@
-<p>Angular v16 launched</p>
+
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-<form (ngSubmit)="payNow()"> 
-    <mat-form-field class="full-width">
+<form (ngSubmit)="payNow()" class="mat-card"> 
+    <mat-form-field class="full-width ">
       <input
       [(ngModel)]="formData.customerName"
       name="customerName"

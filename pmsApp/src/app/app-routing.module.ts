@@ -26,6 +26,7 @@ import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.co
 import { TodayReportComponent } from './pages/sales/today-report/today-report.component';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/supplier-pickup.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
 const routes: Routes = [
   {
     path: 'signup',
@@ -99,6 +100,10 @@ const routes: Routes = [
         path: 'supplierPickup',
         component:SupplierPickupComponent
       },
+      {
+        path: 'editUser/:userId',
+        component:EditUserComponent
+      },
 
     ]
   },
@@ -124,6 +129,10 @@ const routes: Routes = [
       },
       {path: 'myOrder/:fullName',
       component:MyOrdersComponent,
+      },
+      {
+        path: 'editUser/:userId',
+        component:EditUserComponent
       },
       {
         path:'',

@@ -47,6 +47,7 @@ import { ViewReportsComponent } from './pages/sales/view-reports/view-reports.co
 import { TodayReportComponent } from './pages/sales/today-report/today-report.component';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/supplier-pickup.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +79,7 @@ import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/suppl
     TodayReportComponent,
     ImageUploadComponent,
     SupplierPickupComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
