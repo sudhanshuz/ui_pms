@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit{
 
   formSubmit(){
     this.userService.addUser(this.User).subscribe({
-      next: (v) => this.snack.open('successfully registered','',{
+      next: (v) => this.snack.open('successfully registered!! please Proceed with login','',{
         duration:3000
       }),
       error: (e) => this.snack.open('something went wrong','',{

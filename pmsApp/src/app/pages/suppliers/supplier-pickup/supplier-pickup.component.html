@@ -6,7 +6,7 @@
         <div > 
           <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
           <h5 ><b>name: </b>{{o['docName']}}</h5>
-          <h5 ><b>contact: </b>{{o['docContact']}}</h5>
+          <h5 ><b>contact: </b>{{o['docContact']}}</h5> 
           <h5 ><b>email: </b>{{o['docEmail']}}</h5>
           <h5 ><b>total amount: </b>{{o['total']}}</h5> 
           <h5 ><b>Items description:</b> 
@@ -15,7 +15,7 @@
           </h5>
           <input type="number" [(ngModel)]="supplierId" placeholder="eneter supplier Id to pickup">
           <div class="button-container">
-          <button mat-raised-button color="accent" (click)="PickupOrder()" class="custom-button">Pickup</button>
+          <button mat-raised-button color="accent" (click)="PickupOrder(o['orderId'],supplierId)" class="custom-button">Pickup</button>
         </div>
          </div> 
         </div>

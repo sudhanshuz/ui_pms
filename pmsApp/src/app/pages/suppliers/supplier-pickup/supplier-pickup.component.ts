@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { OrdersService } from 'src/app/services/orders.service';
+import { SupplierService } from 'src/app/services/supplier.service';
 
 @Component({
   selector: 'app-supplier-pickup',
@@ -10,7 +12,7 @@ export class SupplierPickupComponent {
 
   Orders:any={};
   supplierId:any;
-constructor(private _orders:OrdersService){
+constructor(private _orders:OrdersService, private _supplier:SupplierService,private snack:MatSnackBar){
 
   this._orders.viewVerifiedOrders().subscribe(
     (data:any)=>{
@@ -21,14 +23,22 @@ constructor(private _orders:OrdersService){
   );
 }
 
-PickupOrder(){
-  console.log(this.supplierId);
-  this._orders.pickUpOrder(this.Orders.orderId,this.supplierId).subscribe(
-    {
-      next:(data)=>{
-        console.log(data);
-      }
+PickupOrder(orderId:any,supplierId:any){
+  this._supplier.pickupOrder(orderId,supplierId).subscribe({
+    next:(data)=>{
+      console.log(data);
+      this.snack.open("Order has been picked up successfully!",'',{
+        duration:3000
+      })
+    },
+    error:(e)=>{
+      this.snack.open("something went wrong",'',{
+        duration:3000
+      });
     }
+  }
+  
   );
 }
+
 } 

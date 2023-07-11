@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from 'src/app/services/orders.service';
 import { PaymentService } from 'src/app/services/payment.service';
 
@@ -23,7 +23,7 @@ export class PaymentComponent {
   };
 
   orderId:any;
-constructor(private payment:PaymentService,private Orders:OrdersService,private _route:ActivatedRoute){
+constructor(private payment:PaymentService,private Orders:OrdersService,private _route:ActivatedRoute,private _router:Router){
   this['orderId']=this._route.snapshot.params['orderId'];
   this.Orders.getOrderById(this.orderId).subscribe(
     (data:any)=>{
@@ -114,5 +114,7 @@ constructor(private payment:PaymentService,private Orders:OrdersService,private 
   @HostListener('window:payment.success', ['$event'])
   onPaymentSuccess(event: any): void {
     this.message = "Success Payment";
+    this._router.navigate(['/doctor/']);
+    
   }
 }

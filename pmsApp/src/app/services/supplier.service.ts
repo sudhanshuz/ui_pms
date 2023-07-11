@@ -32,4 +32,8 @@ export class SupplierService {
               public viewSupplierById(supplierId:any){
                 return this._http.get(`${baseUrl}/supplier/viewSupplierById/${supplierId}`,supplierId);
               }
+
+              public pickupOrder(orderId:any,supplierId:any){
+                return this._http.put(`${baseUrl}/supplier/pickUpOrder/${orderId}/${supplierId}`,orderId,supplierId);
+              }
 }

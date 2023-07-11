@@ -104,6 +104,10 @@ const routes: Routes = [
         path: 'editUser/:userId',
         component:EditUserComponent
       },
+      {
+        path:'',
+        component:HomeComponent
+      }
 
     ]
   },

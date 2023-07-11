@@ -1,4 +1,4 @@
-<div >
+<div *ngIf="Order">
     <div class="card" *ngFor="let o of Order">
      <div >
        <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
@@ -10,4 +10,8 @@
        <h5 ><b>expected Delivery date: </b>{{o['pickupDate']}}</h5>
        </div>
        </div>
+</div>
+
+<div *ngIf="Order.length==0">
+<h1><b>No Orders placed, Or some of your orders has not been picked up yet by supplier</b></h1>
 </div>
