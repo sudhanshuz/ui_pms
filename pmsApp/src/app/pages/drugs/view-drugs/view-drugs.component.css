@@ -13,4 +13,10 @@
     width: 80px; /* Reduces button width */
     height: 30px; /* Reduces button height */
   }
+  .retrievedImage{
+    margin: auto;
+    max-width: 50%; /* Image will scale down if larger than its container */
+    max-height: 100px; /* Adjust the value as per your requirement */
+    height: auto;
+  }
   
