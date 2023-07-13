@@ -30,4 +30,12 @@ export class DrugsService {
             return this._http.put(`${baseUrl}/drugs/edit`,Drugs);
           }
 
+
+          public addDrugsWithImg(Drugs:any,file:any){
+            let formData=new FormData();
+            formData.append("file",file);
+            formData.append("drugData",JSON.stringify(Drugs));
+            return this._http.post(`${baseUrl}/drugs/addWithImg`,formData); 
+          }
+
         }

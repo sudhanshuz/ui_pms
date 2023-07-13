@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpErrorResponse  } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DrugsService } from 'src/app/services/drugs.service';
@@ -18,70 +18,37 @@ export class AddDrugsComponent implements OnInit{
     price:'',
     exp_date:'',
     batchId:'',
-    img:''
+    imageName:''
   }
 
-
-  selectedFile :any;
-  retrievedImage: any;
-  base64Data: any;
-  retrieveResonse: any;
-  message: string="";
-  imageName: any;
-
-  //Gets called when the user selects an image
-  public onFileChanged(event:any) {
-    //Select File
-    this.selectedFile = event.target.files[0];
-  }
-
-
-  //Gets called when the user clicks on submit to upload the image
-  onUpload() {
-    console.log(this.selectedFile);
-    
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-  
-    //Make a call to the Spring Boot Application to save the image
-    this.Drugs.img=this.selectedFile.name;
-    this.httpClient.post('http://localhost:8000/image/upload', uploadImageData)
-      .subscribe((response) => {
-        if (response) {
-          this.Drugs.img=File.name;
-          this.message = 'Image uploaded successfully';
-          console.log("Image uploaded successfully");
-        } else {
-          this.Drugs.img=File.name;
-          this.message = 'Image not uploaded successfully';
-          console.log("Image uploaded successfully");
-        }
-      }
-      );
-
-
-  }
-
-
-
-
-
-
+file:any;
   ngOnInit(): void {
       
   }
 
-  formSubmit(){
-    this._drugs.addDrugs(this.Drugs).subscribe({
-      next: (v) => this.snack.open('successfully added','',{
-        duration:3000
-      }),
-      error: (e) => this.snack.open('something went wrong','',{
-        duration:3000
-      }),
-      complete: () => console.info('complete')
-      //handle the error here
-  });
+  OnChangeFileField(event:any){
+    console.log(event.target.files[0]);
+    this.file=event.target.files[0];
+    this.Drugs.imageName=this.file.name;
+    console.log(this.file);
+    console.log(this.Drugs);
   }
+
+  formSubmit(){
+    console.log(this.Drugs);
+    this._drugs.addDrugsWithImg(this.Drugs,this.file).subscribe({
+      next:(data)=>{
+console.log(data);
+alert("added successfully");
+      },
+      error:(e)=>{
+        console.log(e);
+console.log("something went wrong");
+      },
+      complete:()=>{
+
+      }
+    })
+  }
+
 }

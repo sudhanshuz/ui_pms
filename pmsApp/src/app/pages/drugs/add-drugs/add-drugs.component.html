@@ -25,16 +25,16 @@
       <input type="text" id="batchId"  [(ngModel)]="Drugs.batchId" name="batchId" required>
     </div>
     <br>
+    <div>
+      <label for="formFile">upload image:</label>
+      <input type="text" id="formFile" type="file" name="formFile"
+      (change)="OnChangeFileField($event)"
+      >
+    </div>
+    <br>
 <!--*******************************************************************-->
-<div>      
-        <div>
-            <input type="file" (change)="onFileChanged($event)">
-    
-        </div>
-        <div >
-            <input type="button" (click)="onUpload()" value="upload">
-        </div>
-  </div> 
+
+
     <!--*******************************************************************-->
     <div>
         <button mat-raised-button color="accent" type="submit" class="custom" >Add Drug</button>
