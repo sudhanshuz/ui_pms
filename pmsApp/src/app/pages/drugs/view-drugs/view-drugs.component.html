@@ -17,61 +17,99 @@
 
 <!-- shopping-page.component.html -->
 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  </head>
 
-
-
-<h2 class="heading">
+<h2 class="heading ">
     Drugs Inventory
   </h2> 
+<br>
   <mat-form-field class="example-full-width">
     <mat-label>Search</mat-label>
+    <div class="row">
+        <div class="col">
     <input [(ngModel)]="searchTerm"  matInput type="search" placeholder="Enter drug Name" >
-    <button  (click)="search()">Search</button>
-    <button  (click)="reset()">Reset</button>
+</div>
+<div class="col-1">
+    <button class="rounded-btn">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"  (click)="search()"></mat-icon>
+</button>
+</div>
+
+<div class="col-1">
+    <button class="rounded-btn">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="restart_alt"  (click)="reset()"></mat-icon>
+</button>
+</div>
+</div>
   </mat-form-field> 
 
   <div *ngIf="isButtonClicked"> 
     <div class="card" >
-        <div > 
+
+
+        <div class="row">
+            <div class="col">
+            <img [src]="filterImg" class="retrievedImage custom-margin">
+                </div>
+        
+                <div class="col">
+        <div class="custom-margin-1"> 
             <h5 ><b>Name: </b>{{filterData.drugName}}</h5>
             <h5 ><b>Price per pack: </b>{{filterData.price}}</h5>
             <h5 ><b>Expiry date: </b>{{filterData.exp_date}}</h5>
             <h5 ><b>Batch Id: </b>{{filterData.batchId}}</h5>
-
         </div>
-            <img [src]="filterImg" class="retrievedImage">
+        </div>
+
+
+    <div class="col">
         <div class="button-container">
             <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+filterData['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
             <button  *ngIf="getValue()" (click)="deleteDrugs(filterData.drugName)" mat-raised-button color="accent" class="custom-button">Delete</button>
             <button  *ngIf="!getValue()" [routerLink]="'/doctor/placeOrder/'+filterData['drugName']"  mat-raised-button color="accent" class="custom-button">Buy</button>
         </div>
+        </div>
+    </div>
  <!--               <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
                     name="name" />-->
                 <!--<input type="button" (click)="getImage(filterData['imageName'])" value="Get Image">--> 
   </div>
 
   </div> 
- 
+
+
   <div *ngIf="!isButtonClicked">
 
        <div class="card" *ngFor="let d of Drugs; let i=index;">
+        <div class="row">
+        <div class="col">
+        <img [src]="retrievedImage[i]" class="retrievedImage custom-margin">
+            </div>
 
-        <div >
-          <h5 ><b>Name: </b>{{d['drugName']}}</h5>
-          <h5 ><b>Price per pack: </b>{{d['price']}}</h5>
-          <h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5>
-          <h5 ><b>Batch Id: </b>{{d['batchId']}}</h5>
-        <img [src]="retrievedImage[i]" class="retrievedImage">
+            <div class="col">
+                <div class="custom-margin-1">
+                  <h5 ><b>Name: </b>{{d['drugName']}}</h5>
+                  <h5 ><b>Price per pack: </b>{{d['price']}}</h5>
+                  <h5 ><b>Expiry date: </b>{{d['exp_date']}}</h5>
+                  <h5 ><b>Batch Id: </b>{{d['batchId']}}</h5>
+                </div>
+                </div>
 
-          <div class="button-container">
+                <div class="col">    
+          <div class="button-container ">
           <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+d['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
           <button  *ngIf="getValue()" (click)="deleteDrugs(d['drugName'])" mat-raised-button color="accent" class="custom-button">Delete</button>
           <button  *ngIf="!getValue()" [routerLink]="'/doctor/placeOrder/'+d['drugName']" mat-raised-button color="accent" class="custom-button">Buy</button>
         </div>
+        </div>
     </div>
+</div>
+
+
     <!--<input type="button" (click)="getImage(d['imageName'])" value="Get Image">-->
-     </div>
-     </div>
+
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> 
 
  <!-- <div>

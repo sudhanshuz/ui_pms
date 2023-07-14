@@ -48,6 +48,7 @@ import { TodayReportComponent } from './pages/sales/today-report/today-report.co
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/supplier-pickup.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +99,8 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
     MatListModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [/*{
       provide: HTTP_INTERCEPTORS,
