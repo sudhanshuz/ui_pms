@@ -5,26 +5,33 @@
        <div class="card" *ngFor="let o of Orders">
         <div class="row">
           <div class="col custom-margin">
-          <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
+            <h5 ><b>name: </b>{{o['docName']}}</h5>
+          
         </div>  
         <div class="col-1 custom-margin-1">
-          <h5 ><b>name: </b>{{o['docName']}}</h5>
+          <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
         </div>
         </div>
         <div class="row">
           <div class="col custom-margin-2">
-          <h5 ><b>contact: </b>{{o['docContact']}}</h5> 
+            <h4>Contact Details:</h4>
+          <h5 ><b>Phone no: </b>{{o['docContact']}}</h5> 
           <h5 ><b>email: </b>{{o['docEmail']}}</h5>
         </div>
         <div class="col-1 custom-margin-3">
+          <h4>Billing  Details:</h4>
           <h5 ><b>total amount: </b>{{o['total']}}</h5> 
           <h5 ><b>Items description:</b> 
                  <div> Drug name: {{ o['drugName'] }}</div>
                   <div> quantity: {{ o['qty'] }}</div>
           </h5>
         </div>
-     
+      </div>
+      <div class="row">
+          <div class="col custom-margin-5">
           <input type="number" [(ngModel)]="supplierId" placeholder="eneter supplier Id to pickup">
+          </div>
+
           <div class="button-container col-1 custom-margin-4">
           <button mat-raised-button color="accent" (click)="PickupOrder(o['orderId'],supplierId)" class="custom-button">Pickup</button>
         </div>

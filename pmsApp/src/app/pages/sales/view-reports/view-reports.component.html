@@ -1,19 +1,29 @@
 <div *ngIf="Sales">
     <div class="card" *ngFor="let s of Sales" >
-        <div >
+        <div class="row ">
+            <div class="col-sm custom-margin">
             <h5 ><b>Id: </b>{{s.salesId}}</h5>
-            <div><b>Drugs sold: </b></div>
-            <div *ngFor="let d of s['drugName']">
+        </div>
+            <div class="col-sm"><b>Drugs sold: </b>
+            <div  *ngFor="let d of s['drugName']">
                 <div>{{d}}</div>
             </div>
+        </div>
             <br>
+            <div class="col-sm">
             <h5 ><b>Date: </b>{{s.dateAndTime}}</h5>
+        </div>
+        <div class="col-sm">
             <h5 ><b>Total amount: </b>{{s.totalAmt}}</h5>
+        </div>
+        <div class="col-sm">
             <h5 ><b>Paid Amount: </b>{{s.paidAmt}}</h5>
         </div>
-        <div class="button-container">
-            <button  mat-raised-button color="accent" class="custom-button">download</button>
-            <button   (click)="deleteReports(s.salesId)" mat-raised-button color="accent" class="custom-button">Delete</button>
+        
+        <div class="button-container col-sm">
+            <button  mat-raised-button color="accent" class="btn-1">download</button>
+            <button   (click)="deleteReports(s.salesId)" mat-raised-button color="accent" class="btn-1">Delete</button>
         </div>
+    </div>
   </div>
   </div>
