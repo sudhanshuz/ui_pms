@@ -1,1 +1,19 @@
- 
+ .custom-margin{
+    margin-left: 20px;
+ }
+ .custom-margin-1{
+    margin-right: 20px;
+ }
+ .custom-margin-2{
+    margin-left: 20px;
+ }
+ .custom-margin-3{ 
+    margin-right: 480px;
+    display: inline-block;
+  white-space: nowrap;
+ }
+
+ .custom-margin-4{
+    margin-right: 100px;
+    margin-top: 50px;
+ }

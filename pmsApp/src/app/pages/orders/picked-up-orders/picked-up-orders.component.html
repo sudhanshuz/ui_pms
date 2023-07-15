@@ -3,20 +3,33 @@
   </h2>  
   <div >
        <div class="card" *ngFor="let o of pickedUpOrders">
-        <div >
-          <h5 ><b>Id: </b>{{o['orderId']}}</h5>
-          <h5 ><b>name: </b>{{o['docName']}}</h5>
-          <h5 ><b>contact: </b>{{o['docContact']}}</h5>
-          <h5 ><b>email: </b>{{o['docEmail']}}</h5> 
-          <h5 ><b>total amount: </b>{{o['total']}}</h5>
-          <h5 ><b>pickup date: </b>{{o['pickupDate']}}</h5>
+        <div class="row">
+          <div class="col custom-margin">
+            <h5 ><b>Doctor Name: </b>{{o['docName']}}</h5>
+          </div>
+          <div class="col-1 custom-margin-1">
+          <h5 ><b>Order Id: </b>{{o['orderId']}}</h5>
+        </div>
+
+        </div>
+        <div class="row">
+          <div class="col custom-margin-2">
+            <h4>Contact Details</h4>
+          <h5 ><b>Phone no: </b>{{o['docContact']}}</h5> 
+          <h5 ><b>email: </b>{{o['docEmail']}}</h5>
+        </div> 
+        <div class="col-1 custom-margin-3">
+          <h4>Billing Details</h4>
+          <h5 ><b>Total amount: </b>{{o['total']}}</h5>
+          <h5 ><b>Pickup date: </b>{{o['pickupDate']}}</h5>
           <h5 ><b>Items description:</b> 
-            <div>drug name: {{o['drugName']}}</div>
-            <div>qty: {{o['qty']}}</div>
+            <div>Drug name: {{o['drugName']}}</div>
+            <div>quantity: {{o['qty']}}</div>
                
           </h5>
-          <h5 ><b>supplierId: </b>{{o['supplierId']}}</h5> 
-          <div class="button-container">
+          <h5 ><b>Supplier Id: </b>{{o['supplierId']}}</h5>
+        </div> 
+          <div class="button-container col-1 custom-margin-4">
           <button mat-raised-button color="accent" class="custom-button">send Order details</button>
         </div>
          </div> 

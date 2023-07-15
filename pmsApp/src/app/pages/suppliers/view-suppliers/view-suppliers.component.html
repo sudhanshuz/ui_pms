@@ -1,50 +1,80 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
 <h2 class="heading">
     Suppliers
   </h2> 
-
+<br>
   <!--search bar-->
   <mat-form-field class="example-full-width">
-    <mat-label>Search</mat-label>
+    <div class="row">
+    <div class="col">
     <input [(ngModel)]="searchTerm"  matInput type="search" placeholder="Enter supplier Name" >
-    <button  (click)="search()">Search</button>
-    <button  (click)="reset()">Reset</button>
+  </div>
+  <div class="col-1">
+    <button class="rounded-btn">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"  (click)="search()"></mat-icon>
+    </button>
+    </div>
+    <div class="col-1"> 
+    <button class="rounded-btn">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="restart_alt"  (click)="reset()"></mat-icon>
+    </button>
+  </div>
+  </div>
   </mat-form-field> 
 
   <!--if button is clicked then show the searched item-->
   <div *ngIf="isButtonClicked">
     <div class="card" >
-        <div >
+      <div class="row">
+        <div class="col">
+          <img src="../../../../assets/profile-admin.jpg" class="retrievedImage custom-margin">
+              </div>
+        <div class="col custom-margin-1">
             <h5 ><b>Id: </b>{{filterData.supplierId}}</h5>
             <h5 ><b>Name: </b>{{filterData.supplierName}}</h5>
             <h5 ><b>Email: </b>{{filterData.supplierEmail}}</h5>
             <h5 ><b>contact: </b>{{filterData.supplierPhoneNo}}</h5>
         </div>
-        <div class="button-container">
+        <div class="button-container col" >
             <button  mat-raised-button color="accent" class="custom-button">Edit</button> 
             <button  (click)="deleteSupplier(filterData.supplierName)" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
+      </div>
   </div>
 
   </div> 
   <div *ngIf="!isButtonClicked">
        <div class="card" *ngFor="let s of Suppliers">
-        <div >
+        <div class="row">
+          <div class="col">
+          <img src="../../../../assets/profile-admin.jpg" class="retrievedImage custom-margin">
+              </div>
+        
+              <div class="col">
+        <div class="custom-margin-1">
           <h5 ><b>Id: </b>{{s['supplierId']}}</h5>
           <h5 ><b>name: </b>{{s['supplierName']}}</h5>
           <h5 ><b>Email: </b>{{s['supplierEmail']}}</h5>
           <h5 ><b>Contact: </b>{{s['supplierPhoneNo']}}</h5>
-          <h5 ><b>Stock:</b> 
+         <!-- <h5 ><b>Stock:</b> 
             <div *ngFor="let hashMap of s['stock']">
                 <div *ngFor="let item of hashMap | keyvalue">
                   Drug name: {{ item.key }}, quantity: {{ item.value }}
                 </div>
               </div>
                
-          </h5>
+          </h5>-->
+          </div>
+        </div>
+          <div class="col">
           <div class="button-container">
           <button [routerLink]="'/admin/editSupplier/'+s['supplierId']" mat-raised-button color="accent" class="custom-button">Edit</button>
           <button (click)="deleteSupplier(s['supplierId'])" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
+        </div>
+        
          </div> 
-        </div> 
-  </div>
+        </div>
+

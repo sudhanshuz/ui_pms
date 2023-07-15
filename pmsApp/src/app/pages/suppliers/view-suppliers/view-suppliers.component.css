@@ -1,0 +1,46 @@
+.heading{
+    margin: auto;
+    align-items: center;
+  }
+
+  .button-container {
+    display: flex;
+    margin-top: 100px;
+    gap: 20px;
+  }
+  
+  .custom-button {
+
+    width: 80px; /* Reduces button width */
+    height: 30px; /* Reduces button height */  
+  }
+  .retrievedImage{
+    margin: auto;
+    max-width: 50%; /* Image will scale down if larger than its container */
+    max-height: 100px; /* Adjust the value as per your requirement */
+    height: auto;
+  }
+  .custom-margin {
+    margin: 50px;
+  }
+  .custom-margin-1{
+    margin-top: 20px;
+  }
+
+.example-full-width {
+min-width: 100%;
+margin: auto;
+  }
+
+  .rounded-btn{
+    margin-top: none;
+    background-color: rgb(227, 220, 220);
+    border-radius: 30px;
+  }
+
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h5 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
