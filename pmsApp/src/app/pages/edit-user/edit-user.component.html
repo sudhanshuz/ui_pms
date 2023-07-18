@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <mat-card>
-  <h2 class="text-center">Edit User</h2>
+  <h2 class="text-center">Edit User Details</h2>
 <form *ngIf="User" (submit)="editUser()">
     <div>
       <label for="username">username:</label>
@@ -12,7 +12,7 @@
     </div>
     <br>
     <div>
-      <label for="fullName">fullName:</label> 
+      <label for="full Name">full Name:</label> 
       <input type="text" id="fullName" [(ngModel)]="User.fullName" name="fullName" required>
     </div>
     <br>
@@ -21,12 +21,11 @@
         <input  type="email" id="email"  [(ngModel)]="User.email"  name="email" required >
       </div>
       <br>
-    <div>
-      <label for="password">password:</label>
-      <input type="text" id="password" [(ngModel)]="User.password" name="password"  required>
-    </div>
-    <br>
-
+      <div>
+        <label for="contact">Phone No:</label>
+        <input  type="tel" id="contact"  [(ngModel)]="User.contact"  name="contact" required >
+      </div>
+      <br>
     <div>
         <button mat-raised-button color="accent" type="submit" class="custom" >Update</button>
       </div>

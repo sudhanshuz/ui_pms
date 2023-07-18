@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <mat-card>
-  <h2 class="text-center">Add Suppliers</h2>
+  <h3 class="text-center"><b>Add Suppliers</b></h3>
 <form (ngSubmit)="formSubmit()">
     <div>
       <label for="supplierId">supplier Id:</label>
@@ -12,7 +12,7 @@
     </div>
     <br>
     <div>
-      <label for="supplierName">supplierName:</label>
+      <label for="supplierName">supplier Name:</label>
       <input type="text" id="supplierName" [(ngModel)]="Supplier.supplierName" name="supplierName" required>
     </div>
     <br>
@@ -22,7 +22,7 @@
       </div>
       <br>
     <div>
-      <label for="supplierPhoneNo">Contact:</label>
+      <label for="supplierPhoneNo">Phone No.:</label>
       <input type="text" id="supplierPhoneNo" [(ngModel)]="Supplier.supplierPhoneNo" name="supplierPhoneNo"  required> 
     </div>
     <br>
