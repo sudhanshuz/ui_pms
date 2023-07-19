@@ -20,4 +20,7 @@ export class ReportsService {
     return this._http.get(`${baseUrl}/salesReport/addSalesByDate/${date}`,date);
 
 }
+public printPdf(sales:any){
+  return this._http.post(`${baseUrl}/salesReport/pdf`,sales,{responseType:'arraybuffer'});
+}
 }

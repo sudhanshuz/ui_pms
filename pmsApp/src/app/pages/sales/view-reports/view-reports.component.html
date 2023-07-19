@@ -21,8 +21,8 @@
         </div>
         
         <div class="button-container col-sm">
-            <button  mat-raised-button color="accent" class="btn-1">download</button>
-            <button   (click)="deleteReports(s.salesId)" mat-raised-button color="accent" class="btn-1">Delete</button>
+            <button (click)="printPdf(s)" mat-raised-button color="accent" class="btn-1">download</button>
+            <button   (click)="onDeleteClick(s.salesId)" mat-raised-button color="accent" class="btn-1">Delete</button>
         </div>
     </div>
   </div>

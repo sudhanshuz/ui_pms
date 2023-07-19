@@ -49,6 +49,8 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
 import { SupplierPickupComponent } from './pages/suppliers/supplier-pickup/supplier-pickup.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +83,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ImageUploadComponent,
     SupplierPickupComponent,
     EditUserComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +103,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatMenuModule,
     MatPaginatorModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [/*{
       provide: HTTP_INTERCEPTORS,
