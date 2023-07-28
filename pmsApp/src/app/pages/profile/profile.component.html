@@ -6,22 +6,22 @@
   <mat-card class="profile-details-card" *ngIf="login.getUser()">
     <mat-card-content class="text-center">
       <img src="../../../assets/profile-admin.jpg" alt="img" width="200" height="200" >
-      <h2>{{login.getUser().fullName}}</h2>
-      <p>{{login.getUser().role}}</p>
+      <h2>{{User['fullName']}}</h2>
+      <p>{{User.role}}</p>
       <div class="profile-details ">
         <div>
           <mat-icon >mail</mat-icon>
-          <span>{{login.getUser().email}}</span>
+          <span>{{User.email}}</span>
         </div>
         <div>
           <mat-icon>phone</mat-icon>
-          <span>{{login.getUser().contact}}</span>
+          <span>{{User.contact}}</span>
         </div>
       </div>
     </mat-card-content>
     <div *ngIf="role==='ROLE_ADMIN'" class="adminUpdate">
     <mat-card-actions class="buttons">
-       <button [routerLink]="'/admin/editUser/'+name" mat-raised-button color="accent">Update</button>
+       <button [routerLink]="'/admin/editUser/'+name" mat-raised-button color="accent">Update</button> 
     </mat-card-actions>
   </div>
   <div *ngIf="role==='ROLE_DOCTOR'" class="doctorUpdate">

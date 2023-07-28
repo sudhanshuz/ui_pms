@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DrugsService } from 'src/app/services/drugs.service';
 import { LoginService } from 'src/app/services/login.service';
 import { HttpClient,HttpErrorResponse  } from '@angular/common/http';
+import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -24,7 +26,7 @@ export class ViewDrugsComponent implements OnInit{
     base64Data: any;
     retrieveResonse:any;
     imageName:any;
-  constructor(private _drugs:DrugsService,public user:LoginService, private snack:MatSnackBar , private  httpClient:HttpClient){
+  constructor(private _drugs:DrugsService,public user:LoginService, private snack:MatSnackBar , private  httpClient:HttpClient,private dialog:MatDialog){
 
   } 
 
@@ -48,10 +50,29 @@ export class ViewDrugsComponent implements OnInit{
           console.log(this.Drugs);
         },
         //handle error here  
-      );
-       
+      );   
 
   }
+
+  onDeleteClick(name:any): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        title: 'Delete Confirmation',
+        message: 'Are you sure you want to delete this item?',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe({
+      
+     next:(result)  => {
+      if (result === true) {
+        // Perform the delete action here
+        // Call your delete API or delete logic
+        this.deleteDrugs(name);
+      } 
+  }});
+  }
+
 
   deleteDrugs(drugName:any){
     this._drugs.deleteDrugs(drugName).subscribe(
@@ -110,7 +131,7 @@ export class ViewDrugsComponent implements OnInit{
           this.filterImg=('data:image/jpeg;base64,' + this.base64Data);
         }
       );
-      console.log(this.retrievedImage);
+      console.log(this.retrievedImage); 
   }
 
   reset(){

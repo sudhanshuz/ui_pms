@@ -8,14 +8,27 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
-
+  username:any;
   name:any;
   role:any;
+  User:any;
 constructor(public login:LoginService,private _user:UserService){
-this.name=login.getUser().name;
+this.username=login.getUser().name;
 this.role=login.getUser().role;
-console.log(this.name);
+console.log(this.username);
+this.getUserByUserName();
   
+}
+
+public getUserByUserName(){
+  this._user.getUserByUserName(this.username).subscribe({
+    next:(e)=>{
+      this.User=e;
+      console.log(e);
+      console.log(this.User);
+
+    }
+  });
 }
   ngOnInit(): void {
 

@@ -5,6 +5,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <mat-card *ngIf="!Data">
 <form (ngSubmit)="placeOrder()">
+  <div class="row">
+    <div class="col-sm">
+      <img [src]="filterImg" class="retrievedImage custom-margin">
+    </div>
+  
+  <div class="col-sm custom-margin">
     <div>
       <label for="docName">Name:</label>
       <input type="text" id="docName" [(ngModel)]="Orders.docName" name="docName" required >
@@ -12,7 +18,7 @@
     <br>
     <div> 
       <label for="docEmail">Email:</label> 
-      <input type="email" id="docEmail" [(ngModel)]="Orders.docEmail" name="docEmail" required>
+      <input type="email" id="docEmail" [(ngModel)]="Orders.docEmail" name="docEmail" required> 
     </div>
     <br>
     <div>
@@ -33,7 +39,8 @@
       <div>
         <button mat-raised-button color="accent" type="submit" class="custom" >Confirm Order</button>
       </div>
-      
+    </div>
+    </div>
   </form>
 
 </mat-card>

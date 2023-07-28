@@ -1,8 +1,8 @@
-<div class="card">
-<div><h2><b>Order Id: </b> {{orderId}}</h2></div>
-<div><h2><b>drug name: </b> {{Order['drugName']}}</h2></div>
-<div><h2><b>quantity: </b> {{Order.qty}}</h2></div>
-<div><h2><b>amount to be paid: </b> {{Order.total}}</h2></div>
+<div class="card " >
+<div><h3><b>Order Id: </b> {{orderId}}</h3></div>
+<div><h3><b>drug name: </b> {{Order['drugName']}}</h3></div>
+<div><h3><b>quantity: </b> {{Order.qty}}</h3></div>
+<div><h3><b>amount to be paid: </b> Rs. {{Order.total}}</h3></div>
 </div>
 
 <div *ngIf="!Order.verified">

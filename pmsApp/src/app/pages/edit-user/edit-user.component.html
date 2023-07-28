@@ -26,6 +26,11 @@
         <input  type="tel" id="contact"  [(ngModel)]="User.contact"  name="contact" required >
       </div>
       <br>
+      <div>
+        <label for="password">password:</label>
+        <input  type="text" id="password"  [(ngModel)]="User.password"  name="password" required readonly>
+      </div>
+      <br>
     <div>
         <button mat-raised-button color="accent" type="submit" class="custom" >Update</button>
       </div>

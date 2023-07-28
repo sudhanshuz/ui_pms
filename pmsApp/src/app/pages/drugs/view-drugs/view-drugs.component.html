@@ -57,7 +57,7 @@
                 <div class="col">
         <div class="custom-margin-1"> 
             <h5 ><b>Name: </b>{{filterData.drugName}}</h5>
-            <h5 ><b>Price per pack: </b>{{filterData.price}}</h5>
+            <h5 ><b>Price per pack: </b>{{filterData.price}}</h5> 
             <h5 ><b>Expiry date: </b>{{filterData.exp_date}}</h5>
             <h5 ><b>Batch Id: </b>{{filterData.batchId}}</h5>
         </div>
@@ -67,7 +67,7 @@
     <div class="col">
         <div class="button-container">
             <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+filterData['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
-            <button  *ngIf="getValue()" (click)="deleteDrugs(filterData.drugName)" mat-raised-button color="accent" class="custom-button">Delete</button>
+            <button  *ngIf="getValue()" (click)="onDeleteClick(filterData.drugName)" mat-raised-button color="accent" class="custom-button">Delete</button>
             <button  *ngIf="!getValue()" [routerLink]="'/doctor/placeOrder/'+filterData['drugName']"  mat-raised-button color="accent" class="custom-button">Buy</button>
         </div>
         </div>
@@ -100,7 +100,7 @@
                 <div class="col">    
           <div class="button-container ">
           <button *ngIf="getValue()" [routerLink]="'/admin/editDrugs/'+d['drugName']" mat-raised-button color="accent" class="custom-button">Edit</button>
-          <button  *ngIf="getValue()" (click)="deleteDrugs(d['drugName'])" mat-raised-button color="accent" class="custom-button">Delete</button>
+          <button  *ngIf="getValue()" (click)="onDeleteClick(d['drugName'])" mat-raised-button color="accent" class="custom-button">Delete</button>
           <button  *ngIf="!getValue()" [routerLink]="'/doctor/placeOrder/'+d['drugName']" mat-raised-button color="accent" class="custom-button">Buy</button>
         </div>
         </div>

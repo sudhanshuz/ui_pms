@@ -60,7 +60,7 @@ public logout(){
 }
 //get token
 public getToken(){
-  return localStorage.getItem('token');
+  return localStorage.getItem('token'); 
 }
 
 //set userDetails

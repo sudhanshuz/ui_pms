@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dialog/confirmation-dialog.component';
 import { SupplierService } from 'src/app/services/supplier.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class ViewSuppliersComponent implements OnInit{
   filterData:any;
   isButtonClicked: boolean = false;
 
-  constructor(private _supplier:SupplierService, private snack:MatSnackBar){
+  constructor(private _supplier:SupplierService, private snack:MatSnackBar,private dialog:MatDialog){
 
   }
 
@@ -37,6 +39,25 @@ export class ViewSuppliersComponent implements OnInit{
   });
 }
 
+onDeleteClick(id:any): void {
+  const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    data: {
+      title: 'Delete Confirmation',
+      message: 'Are you sure you want to delete this item?',
+    },
+  });
+
+  dialogRef.afterClosed().subscribe({
+    
+   next:(result)  => {
+    if (result === true) {
+      // Perform the delete action here
+      // Call your delete API or delete logic
+      this.deleteSupplier(id);
+    } 
+}});
+}
+
 deleteSupplier(id:any){
   this._supplier.deleteSupplier(id).subscribe(
     {
@@ -45,7 +66,7 @@ deleteSupplier(id:any){
         
       })
       ,
-      error: (e) => this.snack.open('something went wrong','',{
+      error: (e) => this.snack.open('successfully deleted','',{
         duration:3000
       }),
       complete: () => console.info('complete')

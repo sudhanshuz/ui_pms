@@ -33,13 +33,13 @@
               </div>
         <div class="col custom-margin-1">
             <h5 ><b>Id: </b>{{filterData.supplierId}}</h5>
-            <h5 ><b>Name: </b>{{filterData.supplierName}}</h5>
+            <h5 ><b>Name: </b>{{filterData.supplierName}}</h5> 
             <h5 ><b>Email: </b>{{filterData.supplierEmail}}</h5>
             <h5 ><b>contact: </b>{{filterData.supplierPhoneNo}}</h5>
         </div>
         <div class="button-container col" >
             <button  mat-raised-button color="accent" class="custom-button">Edit</button> 
-            <button  (click)="deleteSupplier(filterData.supplierName)" mat-raised-button color="accent" class="custom-button">Delete</button>
+            <button  (click)="onDeleteClick(filterData.supplierId)" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
       </div>
   </div>
@@ -71,7 +71,7 @@
           <div class="col">
           <div class="button-container">
           <button [routerLink]="'/admin/editSupplier/'+s['supplierId']" mat-raised-button color="accent" class="custom-button">Edit</button>
-          <button (click)="deleteSupplier(s['supplierId'])" mat-raised-button color="accent" class="custom-button">Delete</button>
+          <button (click)="onDeleteClick(s['supplierId'])" mat-raised-button color="accent" class="custom-button">Delete</button>
         </div>
         </div>
         

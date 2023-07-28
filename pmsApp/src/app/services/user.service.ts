@@ -21,10 +21,10 @@ return this.http.put(`${baseUrl}/user/verifyOrderByOrderId/${orderId}`,orderId);
 }
 
 public getUserByUserName(name:any){
-  return this.http.post(`${baseUrl}/user/getByName/${name}`,name);
+  return this.http.get(`${baseUrl}/user/getByName/${name}`,name);
 }
 
 public editUser(user:any){
-  return this.http.put(`${baseUrl}/user/edit/${user}`,user);
+  return this.http.put(`${baseUrl}/user/edit`,user);
 }
 }
